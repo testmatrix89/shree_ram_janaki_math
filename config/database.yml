@@ -5,18 +5,10 @@
 #   gem 'sqlite3'
 #    gem 'pg'
 
-default: &default
-  adapter: postgresql
-  database: glorious_furnitures_db
-  usename: postgres
-  password: root@123
-  pool: 5
-  timeout: 5000
-
 development:
   adapter: postgresql
   database: glorious_furnitures_db
-  usename: postgres
+  usename: root
   password: root@123
   pool: 5
   timeout: 5000
@@ -28,7 +20,7 @@ development:
 test:
   adapter: postgresql
   database: glorious_furnitures_db
-  usename: postgres
+  usename: root
   password: root@123
   pool: 5
   timeout: 5000
@@ -36,7 +28,7 @@ test:
 production:
   adapter: postgresql
   database: glorious_furnitures_db
-  usename: postgres
+  usename: root
   password: root@123
   pool: 5
   timeout: 5000
