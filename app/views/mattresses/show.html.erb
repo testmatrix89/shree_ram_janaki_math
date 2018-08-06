@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matresstitle:</strong>
+  <%= @mattress.matresstitle %>
+</p>
+
+<p>
+  <strong>Mattressdesc:</strong>
+  <%= @mattress.mattressdesc %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @mattress.image %>
+</p>
+
+<%= link_to 'Edit', edit_mattress_path(@mattress) %> |
+<%= link_to 'Back', mattresses_path %>

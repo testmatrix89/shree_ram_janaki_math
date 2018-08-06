@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div id="head">
+    <div class="line">
+        <h1>Mattresses</h1>
+    </div>
+</div>
+<div id="content">
+    <div class="line">
+        <div class="margin">
+            <% @mattresses.each do |mattress| %>
+                <div class="s-12 m-6 l-4">
+                    <%= image_tag mattress.image_url.to_s, style: 'height:auto;width:100%;' %>
+                        <p class="subtitile">
+                            <%= mattress.matresstitle %>
+                        </p>
+                </div>
+              <% end %>
+        </div>
+    </div>
+</div>

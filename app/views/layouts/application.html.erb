@@ -1,15 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gloriousfurniture</title>
+    <title>Glorious furniture</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', :except=>'active_admin.scss', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag('/assets/owl-carousel/owl.carousel.css') %>
+    <%= stylesheet_link_tag('/assets/owl-carousel/owl.theme.css') %> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext') %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="size-1140">
+      <header>
+         <nav>
+            <div class="line">
+               <div class="top-nav">              
+                  <div class="logo hide-l">
+                     <a href="index.html"><strong>Glorious</strong> <br /><strong>Furniture</strong></a>
+                  </div>                  
+                  <p class="nav-text">Custom menu text</p>
+                  <div class="top-nav s-12 l-5">
+                     <ul class="right top-ul chevron">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cots/">Cots</a></li>
+                        <li><a href="/mattresses/">Mattresses</a></li>
+                     </ul>
+                  </div>
+                  <ul class="s-12 l-2">
+                     <li class="logo hide-s hide-m">
+                        <a href="index.html"><strong>Glorious</strong> <br /><strong>Furniture</strong></a>
+                     </li>
+                  </ul>
+                  <div class="top-nav s-12 l-5">
+                     <ul class="top-ul chevron">
+                        <li><a href="/sofas/">Sofas</a></li>
+                        <li><a href="/diningtables/">Dining Tables</a></li>
+                        <li><a href="/#ContactId">Contact</a></li>
+                     </ul> 
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <section>
+          <%= yield %>
+      </section>
+      <!-- FOOTER -->   
+      <footer>
+         <div class="line">
+            <div class="s-12 l-6">
+               <p>Copyright © 2015 Glorious Furniture - All Rights Reserved.
+               </p>
+            </div>
+            <div class="s-12 l-6">
+               <p class="right"></p>
+            </div>
+         </div>
+      </footer>
+      <%= javascript_include_tag('/assets/responsee.js') %>
+      <%= javascript_include_tag('/assets/owl-carousel/owl.carousel.js') %> 
+      <script type="text/javascript">
+         jQuery(document).ready(function($) {  
+           $("#owl-demo").owlCarousel({
+            slideSpeed : 300,
+            autoPlay : true,
+            navigation : false,
+            pagination : false,
+            singleItem:true
+           });
+           $("#owl-demo2").owlCarousel({
+            slideSpeed : 300,
+            autoPlay : true,
+            navigation : false,
+            pagination : true,
+            singleItem:true
+           });
+         });  
+          
+      </script>
   </body>
 </html>

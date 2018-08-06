@@ -1,0 +1,2 @@
+module CotsHelper
+end

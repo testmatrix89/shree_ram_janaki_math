@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sofatitle:</strong>
+  <%= @sofa.sofatitle %>
+</p>
+
+<p>
+  <strong>Sofadesc:</strong>
+  <%= @sofa.sofadesc %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @sofa.image %>
+</p>
+
+<%= link_to 'Edit', edit_sofa_path(@sofa) %> |
+<%= link_to 'Back', sofas_path %>

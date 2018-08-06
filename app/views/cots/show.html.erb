@@ -1,0 +1,22 @@
+<p id="notice">
+    <%= notice %>
+</p>
+<div id="head">
+    <div class="line">
+        <h1>Cot</h1>
+    </div>
+</div>
+<p>
+    <strong>Image:</strong>
+    <%= image_tag @cot.image_url.to_s %>
+</p>
+<p>
+    <strong>Cottitle:</strong>
+    <%= @cot.cottitle %>
+</p>
+<p>
+    <strong>Cotdesc:</strong>
+    <%= @cot.cotdesc %>
+</p>
+<%= link_to 'Edit', edit_cot_path(@cot) %> |
+    <%= link_to 'Back', cots_path %>

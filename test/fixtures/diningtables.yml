@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diningtitle: MyString
+  diningdesc: MyString
+  image: 
+
+two:
+  diningtitle: MyString
+  diningdesc: MyString
+  image: 

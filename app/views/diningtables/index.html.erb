@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div id="head">
+    <div class="line">
+        <h1>Dining Tables</h1>
+    </div>
+</div>
+<div id="content">
+    <div class="line">
+        <div class="margin">
+            <% @diningtables.each do |diningtable| %>
+                <div class="s-12 m-6 l-4">
+                    <%= image_tag diningtable.image_url.to_s, style: 'height:auto;width:100%;' %>
+                        <p class="subtitile">
+                            <%= diningtable.diningtitle %>
+                        </p>
+                </div>
+              <% end %>
+        </div>
+    </div>
+</div>
