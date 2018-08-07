@@ -11,7 +11,7 @@
         <div class="margin">
             <% @cots.each do |cot| %>
                 <div class="s-12 m-6 l-4">
-                    <%= image_tag cot.image_url.to_s, style: 'height:150px;width:auto;' %>
+                    <%= image_tag cot.image_url.to_s, style: 'height:auto;width:100%;' %>
                         <p class="subtitile">
                             <%= cot.cottitle %>
                         </p>
