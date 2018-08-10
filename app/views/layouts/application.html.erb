@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', :except=>'active_admin.scss', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag('/assets/javascrips/owl_carousel.css') %>
-    <%= stylesheet_link_tag('/assets/javascrips/owl_theme.css') %> 
+    <%= stylesheet_link_tag 'application', media: 'all', :except=>'active_admin.scss', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext') %>
   </head>
@@ -52,30 +50,20 @@
       <footer>
          <div class="line">
             <div class="s-12 l-6">
-               <p>Copyright © 2015 Glorious Furniture - All Rights Reserved.
-               </p>
+               <p>Copyright © 2015 Glorious Furniture - All Rights Reserved.</p>
             </div>
             <div class="s-12 l-6">
                <p class="right"></p>
             </div>
          </div>
       </footer>
-      <%= javascript_include_tag('/assets/javascrips/responsee.js') %>
-      <%= javascript_include_tag('/assets/javascrips/owl_carousel.js') %> 
       <script type="text/javascript">
-         jQuery(document).ready(function($) {  
-           $("#owl-demo").owlCarousel({
+         $(document).ready(function() {  
+           $(".owl-carousel").owlCarousel({
             slideSpeed : 300,
             autoPlay : true,
             navigation : false,
             pagination : false,
-            singleItem:true
-           });
-           $("#owl-demo2").owlCarousel({
-            slideSpeed : 300,
-            autoPlay : true,
-            navigation : false,
-            pagination : true,
             singleItem:true
            });
          });  
