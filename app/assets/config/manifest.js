@@ -4,3 +4,4 @@
 //= link_directory ../stylesheets .css
 //= link_directory ../owl-carousel .css
 //= link_tree ../font
+//= link_directory ../../../vendor/test .js
