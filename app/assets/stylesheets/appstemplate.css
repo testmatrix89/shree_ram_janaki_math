@@ -1394,7 +1394,7 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     text-align:center;
     vertical-align:middle;
   }
-  .nav-text:after {
+  .nav-text-----set:after {
     content:"\f008";
     font-family:"mfg";
     font-size:1.1rem;

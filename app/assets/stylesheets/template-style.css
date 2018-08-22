@@ -233,6 +233,13 @@ form.customform input, form.customform select, form.customform textarea {
   .top-nav .logo {
   	padding: 1.25rem;
   }
+  #head {
+  	padding: 1rem 0 1rem;
+    border-top: 1px solid gray;
+  }
+  .top-nav li {
+  	line-height: 1rem;
+  }
   .carousel-text h2 {
   	font-size: 1.3rem;
   }
