@@ -13,37 +13,39 @@
     <%= stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext') %>
   </head>
 
-  <body class="size-1140">
+  <body>
       <header>
-         <nav>
-            <div class="line">
-               <div class="top-nav">              
-                  <div class="logo hide-l">
-                     <a href="index.html"><strong>Glorious</strong> <br /><strong>Furniture</strong></a>
-                  </div>                  
-                  <p class="nav-text">Custom menu text</p>
-                  <div class="top-nav s-12 l-5">
-                     <ul class="right top-ul chevron">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/cots/">Cots</a></li>
-                        <li><a href="/mattresses/">Mattresses</a></li>
-                     </ul>
-                  </div>
-                  <ul class="s-12 l-2">
-                     <li class="logo hide-s hide-m">
-                        <a href="index.html"><strong>Glorious</strong> <br /><strong>Furniture</strong></a>
-                     </li>
-                  </ul>
-                  <div class="top-nav s-12 l-5">
-                     <ul class="top-ul chevron">
-                        <li><a href="/sofas/">Sofas</a></li>
-                        <li><a href="/diningtables/">Dining Tables</a></li>
-                        <li><a href="/#ContactId">Contact</a></li>
-                     </ul> 
-                  </div>
-               </div>
+         <!-- Navigation section start -->
+      <div class="bg-dark collapse" id="navbarHeader" style="">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
             </div>
-         </nav>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <%= image_tag("logo.png", border:0, alt: "", class: "logo-far") %>
+            <strong>Album</strong>
+          </a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+         <!-- Navigation section end -->
       </header>
       <section>
           <%= yield %>
