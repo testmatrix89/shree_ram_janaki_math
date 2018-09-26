@@ -15,3 +15,9 @@
  */
  
 @import "bootstrap";
+@import "scss/agency.scss";
+.logo {
+	margin-top: -10px;
+	margin-bottom: -10px;
+	img {width: 250px;}
+}

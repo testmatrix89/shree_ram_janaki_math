@@ -6,50 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', :except=>'active_admin.scss', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag('/assets/owl-carousel/owl.carousel.css') %>
-    <%= stylesheet_link_tag('/assets/owl-carousel/owl.theme.css') %> 
+    <%= stylesheet_link_tag 'application', media: 'all', :except=>'active_admin.scss', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext') %>
   </head>
 
-  <body>
-      <header>
-         <!-- Navigation section start -->
-      <div class="bg-dark collapse" id="navbarHeader" style="">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
-              </ul>
-            </div>
-          </div>
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger logo" href="#page-top"><%= image_tag("logo.png", border:0, alt: "") %></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-            <%= image_tag("logo.png", border:0, alt: "", class: "logo-far") %>
-            <strong>Album</strong>
-          </a>
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-         <!-- Navigation section end -->
-      </header>
-      <section>
+    </nav>
+    <!-- Navigation -->
+      <!--section-->
           <%= yield %>
-      </section>
+      <!--section-->
       <!-- FOOTER -->   
       <footer>
          <div class="line">
@@ -62,26 +57,5 @@
             </div>
          </div>
       </footer>
-      <%= javascript_include_tag('/assets/responsee.js') %>
-      <%= javascript_include_tag('/assets/owl-carousel/owl.carousel.js') %> 
-      <script type="text/javascript">
-         jQuery(document).ready(function($) {  
-           $("#owl-demo").owlCarousel({
-            slideSpeed : 300,
-            autoPlay : true,
-            navigation : false,
-            pagination : false,
-            singleItem:true
-           });
-           $("#owl-demo2").owlCarousel({
-            slideSpeed : 300,
-            autoPlay : true,
-            navigation : false,
-            pagination : true,
-            singleItem:true
-           });
-         });  
-          
-      </script>
   </body>
 </html>
