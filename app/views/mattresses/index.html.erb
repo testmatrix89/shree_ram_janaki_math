@@ -1,21 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<div id="head">
-    <div class="line">
-        <h1>Mattresses</h1>
+<span id="notice"><%= notice %></span>
+<div class="pagehead">
+    <div class="container">
+        <div class="titlehead">Mattresses</div>
     </div>
 </div>
-<div id="content">
-    <div class="line">
-        <div class="margin">
-            <% @mattresses.each do |mattress| %>
-                <div class="s-12 m-6 l-4">
-                    <%= image_tag mattress.image_url.to_s, style: 'height:auto;width:100%;' %>
-                        <p class="subtitile">
-                            <%= mattress.matresstitle %>
-                        </p>
-                </div>
-              <% end %>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <% @mattresses.each do |mattress| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= image_tag mattress.image_url.to_s, class: "card-img-top", style: 'height:225px;width:100%;display: block;' %>
+            <div class="card-body">
+              <p class="card-text"><%= mattress.matresstitle %></p>
+            </div>
+          </div>
         </div>
+        <% end %>
+      </div>
     </div>
 </div>

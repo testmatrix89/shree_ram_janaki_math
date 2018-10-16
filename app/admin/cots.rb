@@ -12,4 +12,8 @@ permit_params :image,:cottitle, :cotdesc #:list, :of, :attributes, :on, :model
 #   permitted
 # end
 
+#column "Image" do |Cot|
+ # image_tag cot.image, style: 'height:225px;width:100%;display: block;'
+#end
+
 end

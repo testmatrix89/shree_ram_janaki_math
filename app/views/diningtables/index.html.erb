@@ -1,21 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<div id="head">
-    <div class="line">
-        <h1>Dining Tables</h1>
+<span id="notice"><%= notice %></span>
+<div class="pagehead">
+    <div class="container">
+        <div class="titlehead">Dining Tables</div>
     </div>
 </div>
-<div id="content">
-    <div class="line">
-        <div class="margin">
-            <% @diningtables.each do |diningtable| %>
-                <div class="s-12 m-6 l-4">
-                    <%= image_tag diningtable.image_url.to_s, style: 'height:auto;width:100%;' %>
-                        <p class="subtitile">
-                            <%= diningtable.diningtitle %>
-                        </p>
-                </div>
-              <% end %>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <% @diningtables.each do |diningtable| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= image_tag diningtable.image_url.to_s, class: "card-img-top", style: 'height:225px;width:100%;display: block;' %>
+            <div class="card-body">
+              <p class="card-text"><%= diningtable.diningtitle %></p>
+            </div>
+          </div>
         </div>
+        <% end %>
+      </div>
     </div>
 </div>
