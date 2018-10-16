@@ -15,9 +15,50 @@
  */
  
 @import "bootstrap";
-@import "scss/agency.scss";
 .logo {
 	margin-top: -10px;
 	margin-bottom: -10px;
 	img {width: 250px;}
+}
+
+.pagehead {
+	padding: 0;
+	background: image-url('innovative.jpg');
+	background-color: red;
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		background: rgba(0,0,0,0.6);
+		z-index: 0;
+	}
+	.titlehead {
+		padding: 20px 0;
+	    color: #fffffc;
+	    position: relative;
+	    z-index: 1;
+	    font-size: 40px;
+	    text-align: center;
+	    text-shadow: 1px 1px 0px #000;
+	    text-transform: uppercase;
+	}
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
 }

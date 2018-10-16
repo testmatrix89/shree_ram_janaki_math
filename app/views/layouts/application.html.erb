@@ -11,51 +11,44 @@
     <%= stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext') %>
   </head>
 
-  <body id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger logo" href="#page-top"><%= image_tag("logo.png", border:0, alt: "") %></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navigation -->
+    <div class="container">
+        <a class="navbar-brand logo" href="#"><%= image_tag("logo.png", border:0, alt: "Glorious Furniture") %></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+          <ul class="navbar-nav mr-auto">
           </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cots">Cots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mattresses">Mattresses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sofas">Sofas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/diningtables">Dining Tables</a>
+                </li>
+            </ul>
         </div>
-      </div>
+        </div>
     </nav>
     <!-- Navigation -->
       <!--section-->
           <%= yield %>
       <!--section-->
-      <!-- FOOTER -->   
-      <footer>
-         <div class="line">
-            <div class="s-12 l-6">
-               <p>Copyright © 2015 Glorious Furniture - All Rights Reserved.
-               </p>
-            </div>
-            <div class="s-12 l-6">
-               <p class="right"></p>
-            </div>
-         </div>
-      </footer>
+      <!-- FOOTER -->
+<footer class="blog-footer">
+  <p>Copyright © 2015 Glorious Furniture - All Rights Reserved.</p>
+</footer>
   </body>
 </html>
