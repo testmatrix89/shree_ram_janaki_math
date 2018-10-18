@@ -16,4 +16,15 @@ permit_params :image,:cottitle, :cotdesc #:list, :of, :attributes, :on, :model
  # image_tag cot.image, style: 'height:225px;width:100%;display: block;'
 #end
 
+index do
+  selectable_column
+  column 'Titile', :cottitle
+  column 'Description', :cotdesc
+  column :image do |cot|
+  	image_tag cot.image_url.to_s, style: 'height:auto;width:80px;'
+  end
+  column 'Created Date', :created_at
+  column 'Updated Date', :updated_at
+  actions
+end
 end
