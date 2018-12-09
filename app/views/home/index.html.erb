@@ -100,7 +100,7 @@
     <div class="row">
       <div class="col-md-6">
         <h4>Get In Touch</h4>
-        <form>
+        <!--<form>
           <div class="form-group">
             <input type="name" class="form-control" id="exampleInputName" placeholder="Enter name">
           </div>
@@ -112,6 +112,21 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <br>-->
+        <%= form_tag home_index_path, :method => 'POST' do %>
+          <div class="form-group">
+          <%= text_field_tag :name, nil, class: 'form-control', placeholder: 'Enter name'  %>
+          </div>
+          <div class="form-group">
+          <%= text_field_tag :email, nil, type: 'email', class: 'form-control', placeholder: 'Enter email' %>
+          </div>
+          <div class="form-group">
+          <%= text_area_tag :body, nil, class: 'form-control', placeholder: 'Messages' %>
+          </div>
+          <div>
+            <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
       </div>
       <div class="col-md-6">
         <h4>Glorious Furniture</h4>
