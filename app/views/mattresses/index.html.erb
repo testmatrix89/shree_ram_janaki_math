@@ -4,19 +4,42 @@
         <div class="titlehead">Mattresses</div>
     </div>
 </div>
-<div class="album py-5 bg-light">
+
+<div class="jumbotron">
+  <div class="container">
+    <h5 class="display-4">Main heading related to page!! </h5>
+    <p>Currently, Demo text... This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+  </div>
+</div>
+
+<div class="container">
+<div class="jumbotron">
     <div class="container">
       <div class="row">
-        <% @mattresses.each do |mattress| %>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <%= image_tag mattress.image_url.to_s, class: "card-img-top", style: 'height:225px;width:100%;display: block;' %>
-            <div class="card-body">
-              <p class="card-text"><%= mattress.matresstitle %></p>
+        <% if @mattresses.length > 0 %>
+          <% @mattresses.each do |mattress| %>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <%= image_tag mattress.image_url.to_s, class: "card-img-top", style: 'width:100%;display: block;' %>
+                <div class="card-body">
+                  <p class="card-text"><%= mattress.matresstitle %></p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% else %>
+          <% (0..5).each do |i| %>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <%= image_tag('logo_icon.png', class: "card-img-top", style: 'height:225px;width:100%;display: block;') %>
+                <div class="card-body">
+                  <p class="card-text">Matress image title</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
+</div>
 </div>
