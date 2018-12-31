@@ -64,17 +64,17 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "gloriousfurniture_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  host = 'localhost:3000'
+  host = 'https://gloriousfurnitures.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :user_name            => ENV['gmail_username'],
-   :password             => ENV['gmail_password'],
+   :user_name            => "infomatrix89@gmail.com", #ENV['gmail_username'],
+   :password             => "matrix@info", #ENV['gmail_password'],
    :authentication       => "plain",
-  :enable_starttls_auto => true
+   :enable_starttls_auto => true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

@@ -7,7 +7,6 @@ class HomeController < ApplicationController
   		#redirect_to action: :index
   		#render html: @cntct
   	end
-
   end
 
   def getParams
