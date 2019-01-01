@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   	if @contact
   		@cntct = ContactMailer.contact_email(getParams)
   		@cntct.deliver_now
+  		if @cntct.deliver_now
+			flash[:notice] = "Message sent! We will get back to you shortly."
+			redirect_to action: :index
+  		end
   		#redirect_to action: :index
   		#render html: @cntct
   	end

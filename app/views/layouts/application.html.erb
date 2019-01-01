@@ -14,6 +14,15 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+<div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
+  <strong>Thanks for submit, </strong> <%= notice %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<% end %>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Navigation -->
     <div class="container">
@@ -96,13 +105,13 @@
         <br>-->
         <%= form_tag home_index_path, :method => 'POST' do %>
           <div class="form-group">
-          <%= text_field_tag :name, nil, class: 'form-control', placeholder: 'Enter name'  %>
+          <%= text_field_tag :name, nil, :required => true, class: 'form-control', placeholder: 'Enter name'  %>
           </div>
           <div class="form-group">
-          <%= text_field_tag :email, nil, type: 'email', class: 'form-control', placeholder: 'Enter email' %>
+          <%= text_field_tag :email, nil, :required => true, type: 'email', class: 'form-control', placeholder: 'Enter email' %>
           </div>
           <div class="form-group">
-          <%= text_area_tag :body, nil, class: 'form-control', placeholder: 'Messages' %>
+          <%= text_area_tag :body, nil, :required => true, class: 'form-control', placeholder: 'Messages' %>
           </div>
           <div>
             <%= submit_tag 'Submit', class: 'btn btn-primary' %>
