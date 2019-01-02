@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subscribers
   resources :mattresses
   resources :diningtables
   resources :sofas
