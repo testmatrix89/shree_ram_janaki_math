@@ -10,6 +10,7 @@ class SubscribersController < ApplicationController
 			redirect_to root_path
     		flash[:notice] = "Thanks for joining our mailing list!"
   		end
+  		
     	#render html: subsParams
   	end
 
