@@ -13,6 +13,9 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <% notice %>
+    <% end %>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <!-- Navigation -->
     <div class="container">
@@ -73,7 +76,7 @@
 
           <% if flash[:notice] %>
             <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
-              <strong><%= notice %></strong>
+              <strong><%= notice %> Prince kr</strong>
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
