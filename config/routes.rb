@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   resources :diningtables
   resources :sofas
   resources :cots
+  resources :homes
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'home#index'
-  get 'home/index'
-  post 'home/index'
+  root 'homes#index'
+  #get 'homes/index'
+  #post 'homes/index'
   
 end

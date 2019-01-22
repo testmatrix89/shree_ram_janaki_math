@@ -111,19 +111,19 @@
             </button>
           </div>
         <% end %>
-        <%= form_tag home_index_path, :method => 'POST' do %>
-          <%= hidden_field_tag :pagename, controller.controller_name %>
+        <%= form_for Home.new do |f| %>
+          <%= f.hidden_field :pagename, :value => controller.controller_name %>
           <div class="form-group">
-          <%= text_field_tag :name, nil, :required => true, class: 'form-control', placeholder: 'Enter name'  %>
+          <%= f.text_field :name, :required => true, class: 'form-control', placeholder: 'Enter name'  %>
           </div>
           <div class="form-group">
-          <%= text_field_tag :email, nil, :required => true, type: 'email', class: 'form-control', placeholder: 'Enter email' %>
+          <%= f.text_field :email, :required => true, type: 'email', class: 'form-control', placeholder: 'Enter email' %>
           </div>
           <div class="form-group">
-          <%= text_area_tag :body, nil, :required => true, class: 'form-control', placeholder: 'Messages' %>
+          <%= f.text_field :body, :required => true, class: 'form-control', placeholder: 'Messages' %>
           </div>
           <div>
-            <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>
           </div>
         <% end %>
       </div>
