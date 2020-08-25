@@ -47,16 +47,22 @@ ActiveRecord::Schema.define(version: 2019_01_22_042852) do
   end
 
   create_table "cots", force: :cascade do |t|
-    t.string "cottitle"
-    t.string "cotdesc"
+    t.string "title"
+    t.string "description"
+    t.string "colour_options"
+    t.string "price"
+    t.string "discount"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
   end
 
   create_table "diningtables", force: :cascade do |t|
-    t.string "diningtitle"
-    t.string "diningdesc"
+    t.string "title"
+    t.string "description"
+    t.string "colour_options"
+    t.string "price"
+    t.string "discount"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,16 +77,22 @@ ActiveRecord::Schema.define(version: 2019_01_22_042852) do
   end
 
   create_table "mattresses", force: :cascade do |t|
-    t.string "matresstitle"
-    t.string "mattressdesc"
+    t.string "title"
+    t.string "description"
+    t.string "colour_options"
+    t.string "price"
+    t.string "discount"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "sofas", force: :cascade do |t|
-    t.string "sofatitle"
-    t.string "sofadesc"
+    t.string "title"
+    t.string "description"
+    t.string "colour_options"
+    t.string "price"
+    t.string "discount"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

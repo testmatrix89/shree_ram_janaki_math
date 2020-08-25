@@ -12,33 +12,11 @@
 </div>
 
 <div class="container">
-<div class="jumbotron">
+  <div class="jumbotron">
     <div class="container">
       <div class="row">
-        <% if @cots.length > 0 %>
-          <% @cots.each do |cot| %>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <%= link_to image_tag(cot.image_url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(cot.image_url.to_s), :data => {:lightbox => "cots"} %>
-                <div class="card-body">
-                  <p class="card-text"><%= cot.cottitle %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% else %>
-          <% (0..3).each do |i| %>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <%= link_to image_tag('logo_icon.png', class: "card-img-top", style: 'width:100%;display: block;'), image_path('logo_icon.png'), :data => {:lightbox => "demoimage"} %>
-                <div class="card-body">
-                  <p class="card-text">Cots image title</p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+        <%= render partial: "shared/common", locals: { datas: @cots } %>
       </div>
     </div>
+  </div>
 </div>

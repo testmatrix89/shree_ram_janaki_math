@@ -2,7 +2,7 @@ ActiveAdmin.register Cot do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :image,:cottitle, :cotdesc #:list, :of, :attributes, :on, :model
+permit_params :image, :title, :description, :price, :discount, :colour_options #:list, :of, :attributes, :on, :model
 #
 # or
 #
@@ -18,8 +18,11 @@ permit_params :image,:cottitle, :cotdesc #:list, :of, :attributes, :on, :model
 
 index do
   selectable_column
-  column 'Titile', :cottitle
-  column 'Description', :cotdesc
+  column 'Titile', :title
+  column 'Description', :description
+  column 'Price', :price
+  column 'Discount', :discount
+  column 'Options', :colour_options, type: "text"
   column :image do |cot|
   	image_tag cot.image_url.to_s, style: 'height:auto;width:80px;'
   end

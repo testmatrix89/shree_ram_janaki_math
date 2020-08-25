@@ -1,0 +1,30 @@
+<% if datas.present? %>
+  <% datas.each do |item| %>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <%= link_to image_tag(item.image_url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(item.image_url.to_s), :data => {:lightbox => "#{item.class.name}#{item.id}"}, 'data-title': item.description %>
+        <div class="card-body">
+          <p class="card-text"><%= item.title %></p>
+          <hr />
+          <div class="d-flex justify-content-between align-items-center">
+            <div>Color Options</div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><%= item.colour_options %></button>
+              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Orange</button> -->
+            </div>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-between align-items-center">
+            <div>Price: Rs. <%= item.price %>/-</div>
+            <small> Dis: <%= item.discount %></small>
+          </div>
+          <div class="text-center mt-3"><button class="btn btn-primary pl-4 pr-4">Buy</button></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="col-md-12">
+    <h3>Items details will be update soon by admin.</h3>
+  </div>
+<% end %>

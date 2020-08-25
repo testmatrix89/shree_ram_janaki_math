@@ -15,29 +15,7 @@
 <div class="jumbotron">
     <div class="container">
       <div class="row">
-        <% if @mattresses.length > 0 %>
-          <% @mattresses.each do |mattress| %>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                  <%= link_to image_tag(mattress.image_url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(mattress.image_url.to_s), :data => {:lightbox => "mattress"}  %>
-                <div class="card-body">
-                  <p class="card-text"><%= mattress.matresstitle %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% else %>
-          <% (0..2).each do |i| %>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <%= link_to image_tag('logo_icon.png', class: "card-img-top", style: 'width:100%;display: block;'), image_path('logo_icon.png'), :data => {:lightbox => "demoimage"} %>
-                <div class="card-body">
-                  <p class="card-text">Matress image title</p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render partial: "shared/common", locals: { datas: @mattresses } %>
       </div>
     </div>
 </div>
