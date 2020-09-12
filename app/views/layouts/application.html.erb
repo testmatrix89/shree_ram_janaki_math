@@ -49,8 +49,8 @@
       <!--section-->
 
 <!--static on all pages-->
-<div class="album py-5 bg-success" id="subscribed">
-  <div class="container">
+<div class="album py-5 bg-dark" id="subscribed">
+  <div class="container color-white">
     <div class="row">
       <div class="col-md-12 text-center">
         <h4>Join Our Mailing List</h4>
@@ -59,7 +59,7 @@
     </div>
     <div class="row">
       <div class="col-md-12" style="max-width: 768px;margin:auto;">
-          <%= form_for Subscriber.new do |f| %>
+          <%= form_for(Subscriber.new, remote: true) do |f| %>
           <div class="form-group row">
             <%= f.hidden_field :pagename, :value => controller.controller_name %>
             <div class="col-8 col-sm-10">
@@ -71,7 +71,7 @@
           </div>
           <% end %>
 
-          <% if flash[:notice] %>
+          <% if flash.now[:notice] %>
             <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
               <strong><%= notice %></strong>
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -143,7 +143,7 @@
 
       <!-- FOOTER -->
 <footer class="blog-footer">
-  <p>Copyright © 2015 Glorious Furniture - All Rights Reserved.</p>
+  <div>Copyright © <%= Date.current.year %> Glorious Furniture - All Rights Reserved.</div>
 </footer>
   </body>
 </html>
