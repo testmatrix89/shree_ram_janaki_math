@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_042852) do
+ActiveRecord::Schema.define(version: 2020_09_19_050513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,29 +46,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_042852) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "cots", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "colour_options"
-    t.string "price"
-    t.string "discount"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "diningtables", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "colour_options"
-    t.string "price"
-    t.string "discount"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "homes", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "body"
@@ -76,26 +54,33 @@ ActiveRecord::Schema.define(version: 2019_01_22_042852) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "mattresses", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "colour_options"
-    t.string "price"
-    t.string "discount"
-    t.string "image"
+  create_table "order_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "product_id"
+    t.integer "order_id"
+    t.decimal "total"
+    t.decimal "unit_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "sofas", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
+    t.decimal "subtotal"
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.string "colour_options"
-    t.string "price"
-    t.string "discount"
-    t.string "image"
+    t.decimal "discount"
+    t.decimal "price"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "avatars"
   end
 
   create_table "subscribers", force: :cascade do |t|

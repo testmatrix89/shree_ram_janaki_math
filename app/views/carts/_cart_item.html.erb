@@ -1,0 +1,19 @@
+<h1>Carts#show</h1>
+<p>Find me in app/views/carts/show.html.erb</p>
+<% @order_items.each do |item| %>
+	<h3><%= item.product.title %></h3>
+	<h5><%= item.product.price %></h5>
+
+	<%= form_for item, remote:true do |f| %>
+		<%= f.hidden_field :product_id, value: item.product.id %>
+		<%= f.number_field :quantity, value: item.quantity.to_i %>
+		<%= f.submit 'Update Cart' %>
+	<% end %>
+
+	<p>Subtotal <%= item.total %></p>
+
+<% end %>
+<hr>
+<div>
+	<h2>Your current cart value has subtotal of: <%= current_order.subtotal %> <%= link_to 'Payment', 'javascript:void(0)', class: 'btn btn-primary' %></h2>
+</div>

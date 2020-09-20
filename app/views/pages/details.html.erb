@@ -1,0 +1,46 @@
+<h1>Pages#Details</h1>	
+<div>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Color Options</th>
+			<th>Discount</th>
+			<th>Price</th>
+			<th>Images</th>
+			<th>Category</th>
+		</tr>
+		<% @products.each do |p| %>
+			<tr>
+				<td><%= p.title %></td>
+				<td><%= p.description %></td>
+				<td><%= p.colour_options %></td>
+				<td><%= p.discount %></td>
+				<td><%= p.price %></td>
+				<td>
+					<% p.avatars.each do |avatar| %>
+						<%= link_to image_tag(avatar.url.to_s, class: "card-img-top", style: 'width:100px;'), image_path(avatar.url.to_s), :data => {:lightbox => "#{p.category}#{p.id}"}, 'data-title': p.description %> 
+					<% end %>
+				</td>
+				<td><%= p.category %></td>
+				<td><%= link_to "Show", page_path(p) %></td>
+				<td>
+					<%= form_for @order_item, remote: true do |f| %>
+						<%= f.hidden_field :product_id, :value => p.id %>
+						<%= f.number_field :quantity, :value => 1, :min => 1 %>
+						<%= f.submit 'Add to Cart' %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<div>
+		<p><%= link_to 'Create Product', new_product_path, class: 'btn btn-primary' %></p>
+	</div>
+</div>
+
+<div>
+	<div id="cart">
+		<%= render 'carts/cart' %>
+	</div>
+</div>

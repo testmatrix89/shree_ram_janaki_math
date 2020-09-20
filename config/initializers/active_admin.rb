@@ -283,7 +283,7 @@ ActiveAdmin.setup do |config|
   # override the content of the footer here.
   #
   # config.footer = 'my custom footer text'
-
+  config.register_javascript 'active_admin/json_editor.js'
   # == Sorting
   #
   # By default ActiveAdmin::OrderClause is used for sorting logic

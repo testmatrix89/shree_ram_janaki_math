@@ -1,0 +1,132 @@
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+  
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag("first.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+      <div class="carousel-caption d-md-block">
+        <h1>Welcome to Glorious Furniture</h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("second.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+      <div class="carousel-caption d-md-block">
+        <h1>Welcome to Glorious Furniture</h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("third.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+      <div class="carousel-caption d-md-block">
+        <h1>Welcome to Glorious Furniture</h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("forth.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+      <div class="carousel-caption d-md-block">
+        <h1>Welcome to Glorious Furniture</h1>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="starter-template">
+  <h1>About Us</h1>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="display-5 text-center">Handcrafted Furniture</h3>
+        <div class="card mb-4 shadow-sm">
+          <%= image_tag("handcrafted.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+          <div class="card-body">
+            <p class="lead text-center">We are specialized in hand crafted furniture at our exclusive work shops and we design exactly the way you like and customize any sofas or cots according to your style and size</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="display-5 text-center">Innovative Designs</h3>
+        <div class="card mb-4 shadow-sm">
+          <%= image_tag("innovative.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+          <div class="card-body">
+            <p class="lead text-center">Glorious Furniture in Manikonda is the biggest furniture mall in entire Manikonda area with numerous variety of designs and imported  furniture.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3 class="display-5 text-center">Committed to Quality</h3>
+        <div class="card mb-4 shadow-sm">
+          <%= image_tag("commited.jpg", border:0, alt: "Glorious Furniture", class: "d-block w-100 slider-class") %>
+          <div class="card-body">
+            <p class="lead text-center">We are well known for our quality of service and we give warranty on all of our products.</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+
+
+<!-- <h1>Pages#index</h1>
+<h1>Product#index</h1>
+<p>Find me in app/views/product/index.html.erb</p>
+
+<div>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Color Options</th>
+			<th>Discount</th>
+			<th>Price</th>
+			<th>Images</th>
+			<th>Category</th>
+		</tr>
+		<% @products.each do |p| %>
+			<tr>
+				<td><%= p.title %></td>
+				<td><%= p.description %></td>
+				<td><%= p.colour_options %></td>
+				<td><%= p.discount %></td>
+				<td><%= p.price %></td>
+				<td>
+					<% p.avatars.each do |avatar| %>
+						<%= link_to image_tag(avatar.url.to_s, class: "card-img-top", style: 'width:100px;'), image_path(avatar.url.to_s), :data => {:lightbox => "#{p.category}#{p.id}"}, 'data-title': p.description %> 
+					<% end %>
+				</td>
+				<td><%= p.category %></td>
+				<td><%= link_to "Show", page_path(p) %></td>
+				<td>
+					<%= form_for @order_item, remote: true do |f| %>
+						<%= f.hidden_field :product_id, :value => p.id %>
+						<%= f.number_field :quantity, :value => 1, :min => 1 %>
+						<%= f.submit 'Add to Cart' %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<div>
+		<p><%= link_to 'Create Product', new_product_path, class: 'btn btn-primary' %></p>
+	</div>
+</div>
+
+<div>
+	<div id="cart">
+		<%= render 'carts/cart' %>
+	</div>
+</div> -->

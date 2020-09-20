@@ -2,7 +2,9 @@
   <% datas.each do |item| %>
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
-        <%= link_to image_tag(item.image_url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(item.image_url.to_s), :data => {:lightbox => "#{item.class.name}#{item.id}"}, 'data-title': item.description %>
+        <% item.avatars.each do |image| %>
+        <%= link_to image_tag(image.url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(image.url.to_s), :data => {:lightbox => "#{item.category}#{item.id}"}, 'data-title': item.description %>
+        <% end %>
         <div class="card-body">
           <p class="card-text"><%= item.title %></p>
           <hr />

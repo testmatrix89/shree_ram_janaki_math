@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+  resources :pages, only:[:index, :details, :show]
+  resources :products
+  resources :order_items
+  resource :carts, only:[:show]
+  
   resources :subscribers
-  resources :mattresses
-  resources :diningtables
-  resources :sofas
-  resources :cots
+  get 'details', to: 'pages#details', as: :product_details
+  get 'mattresses', to: 'pages#mattresses', as: :mattresses
+  get 'diningtables', to: 'pages#diningtables', as: :diningtables
+  get 'sofas', to: 'pages#sofas', as: :sofas
+  get 'cots', to: 'pages#cots', as: :cots
   resources :homes
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'homes#index'
+  root 'pages#index'
   #get 'homes/index'
   #post 'homes/index'
   

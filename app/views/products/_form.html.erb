@@ -1,0 +1,35 @@
+
+<div>
+	<%= form_for(@product, local: true) do |f| %>
+		<p>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</p>
+		<p>
+			<%= f.label :Description %>
+			<%= f.text_field :description %>
+		</p>
+		<p>
+			<%= f.label :colour_options %>
+			<%= f.select(:colour_options, options_for_select(['Red', 'Blue', 'Green', 'Golden']), multiple: true) %>
+		</p>
+		<p>
+			<%= f.label :discount %>
+			<%= f.text_field :discount %>
+		</p>
+		<p>
+			<%= f.label :price %>
+			<%= f.text_field :price %>
+		</p>
+		<p>
+			<%= f.label :title %>
+			<%= f.select(:category, options_for_select(['Mattress', 'Sofa', 'Cot', 'Dining Table'])) %>
+		</p>
+		<p>
+			Images: <%= f.file_field :avatars, multiple: true %>
+		</p>
+		<p>
+			<%= f.submit class: 'btn btn-primary' %> | <%= link_to 'Products', products_path, class: 'btn btn-info' %>
+		</p>
+	<% end %>
+</div>
