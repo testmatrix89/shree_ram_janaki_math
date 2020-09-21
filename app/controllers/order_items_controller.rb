@@ -4,6 +4,7 @@ class OrderItemsController < ApplicationController
 		@order_item = @order.order_items.new(order_params)
 		@order.save
 		session[:order_id] = @order.id
+		@curr_params_id = order_params[:product_id]
 	end
 
 	def update

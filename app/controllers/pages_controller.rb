@@ -1,7 +1,9 @@
 class PagesController < ApplicationController
+  before_action :set_items
+  
   def index
-  	@products = Product.all
-  	@order_item = current_order.order_items.new
+  	# @products = Product.all
+  	# @order_item = current_order.order_items.new
   end
 
   def mattresses
@@ -27,5 +29,11 @@ class PagesController < ApplicationController
 
   def show
   	@product = Product.find(params[:id])
+  end
+
+
+  def set_items
+    @products = Product.all
+    @order_item = current_order.order_items.new
   end
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'checkout', to: 'checkout#index', as: :checkout
   get 'carts/show'
   resources :pages, only:[:index, :details, :show]
   resources :products
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get 'diningtables', to: 'pages#diningtables', as: :diningtables
   get 'sofas', to: 'pages#sofas', as: :sofas
   get 'cots', to: 'pages#cots', as: :cots
-  resources :homes
+  resources :contacts
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'pages#index'

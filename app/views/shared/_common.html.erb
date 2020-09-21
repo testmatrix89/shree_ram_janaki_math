@@ -2,25 +2,44 @@
   <% datas.each do |item| %>
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
+        <%= link_to image_tag(item.avatars.first.url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(item.avatars.first.url.to_s), :data => {:lightbox => "#{item.category}#{item.id}"}, 'data-title': item.description %>
         <% item.avatars.each do |image| %>
-        <%= link_to image_tag(image.url.to_s, class: "card-img-top", style: 'width:100%;display: block;'), image_path(image.url.to_s), :data => {:lightbox => "#{item.category}#{item.id}"}, 'data-title': item.description %>
+        <%= link_to image_tag(image.url.to_s, class: "card-img-top d-none", style: 'width:100%;display: block;'), image_path(image.url.to_s), :data => {:lightbox => "#{item.category}#{item.id}"}, 'data-title': item.description %>
         <% end %>
         <div class="card-body">
           <p class="card-text"><%= item.title %></p>
-          <hr />
           <div class="d-flex justify-content-between align-items-center">
-            <div>Color Options</div>
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary"><%= item.colour_options %></button>
-              <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Orange</button> -->
+            <div class="accordion w-100" id="accordion<%= item.id %>">
+              <a href="javascript:void(0)" class="d-block" type="button" data-toggle="collapse" data-target="#collapse<%= item.id %>" aria-expanded="true" aria-controls="collapse<%= item.id %>">
+                Color Options <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down float-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+</svg>
+              </a>
+                <div id="collapse<%= item.id %>" class="collapse" aria-labelledby="heading<%= item.id %>" data-parent="#accordion<%= item.id %>">
+                  <div class="">
+                    <%= item.colour_options %>
+                  </div>
+              </div>
             </div>
           </div>
-          <hr />
           <div class="d-flex justify-content-between align-items-center">
-            <div>Price: Rs. <%= item.price %>/-</div>
-            <small> Dis: <%= item.discount %></small>
+            <div>
+              <small>Price: <%= item.price %></small>
+            </div>
+            <small>Discount: <%= item.discount %></small>
           </div>
-          <div class="text-center mt-3"><button class="btn btn-primary pl-4 pr-4">Buy</button></div>
+          <h6>Offered Price: Rs. <%= price_discount(item.price, item.discount) %>/-</h6>
+          <div class="text-center mt-3" id="product-btnbox<%= item.id %>">
+            <% if check_add_to_cart?(item.id) %>
+              <%= link_to 'Added to Cart', carts_path, class: 'btn btn-success pl-4 pr-4' %>
+            <% else %>
+              <%= form_for @order_item, remote: true do |f| %>
+                <%= f.hidden_field :product_id, :value => item.id %>
+                <%= f.hidden_field :quantity, :value => 1, :min => 1 %>
+                <%= f.submit 'Add to Cart', class: 'btn btn-primary pl-4 pr-4' %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

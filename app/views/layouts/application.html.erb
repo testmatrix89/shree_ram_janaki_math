@@ -59,7 +59,7 @@
     </div>
     <div class="row">
       <div class="col-md-12" style="max-width: 768px;margin:auto;">
-          <%= form_for(Subscriber.new, remote: true) do |f| %>
+        <%= form_for(Subscriber.new, remote: true) do |f| %>
           <div class="form-group row">
             <%= f.hidden_field :pagename, :value => controller.controller_name %>
             <div class="col-8 col-sm-10">
@@ -70,15 +70,16 @@
             </div>
           </div>
           <% end %>
-
-          <% if flash.now[:notice] %>
-            <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
-              <strong><%= notice %></strong>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <% end %>
+          <div id="subscriber-message">
+            <% if flash.now[:notice] %>
+              <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
+                <strong><%= notice %></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% end %>
+        </div>
       </div> 
     </div>
   </div>
