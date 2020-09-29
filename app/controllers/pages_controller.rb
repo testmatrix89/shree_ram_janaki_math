@@ -23,8 +23,9 @@ class PagesController < ApplicationController
   end
 
   def details
-  	@products = Product.all
-  	@order_item = current_order.order_items.new
+    redirect_to admin_products_path
+  	# @products = Product.all
+  	# @order_item = current_order.order_items.new
   end
 
   def show

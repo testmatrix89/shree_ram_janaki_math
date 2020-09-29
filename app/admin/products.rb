@@ -3,7 +3,7 @@ ActiveAdmin.register Product do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   permit_params :title, :description, :colour_options, :discount, :price, :category, avatars: [] #:list, :of, :attributes, :on, :model
-  json_editor
+  #json_editor
   # or
   #
   # permit_params do
@@ -32,4 +32,20 @@ ActiveAdmin.register Product do
     column 'Updated Date', :updated_at
     actions
   end
+
+
+
+  form html: { multipart: true }  do |f|
+    f.inputs  do
+      f.input :title
+      f.input :description
+      f.input :colour_options #, as: :select, collection: options_for_select(['Red', 'Blue', 'Green', 'Yellow'], f.product.colour_options.to_s), multiple: true, size: 4
+      f.input :price
+      f.input :discount, as: :select, collection: options_for_select((1..100).select(), f.product.discount.to_i), include_blank: '--Select Discount--'
+      f.input :category, as: :select, collection: options_for_select(['Mattress', 'Sofa', 'Cot', 'Dining Table'], f.product.category), include_blank: '--Select Category--'
+      f.input :avatars, as: :file, input_html: { multiple: true }
+    end
+    f.actions
+  end
+
 end
