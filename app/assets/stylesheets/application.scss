@@ -43,10 +43,6 @@ nav.navbar.bg-dark {
 	width: 100%;
 }
 
-.carousel-caption h1 {
-  color: red;
-}
-
 .pagehead {
 	padding: 0;
 	background: image-url('innovative.jpg');
@@ -96,16 +92,42 @@ h3.display-5 {
 	font-size: 1.17em;
 }
 
-.carousel-caption {
-    top: 10%;
-    bottom: auto;
-    background: rgba(0,0,0,0.4);
-    border-radius: 24px;
+.main-details-homepage {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
 }
 
-.carousel-caption h1 {
-	margin-bottom: 0;
-  font-size: 4vw;
+.carousel-caption  {
+  top: 10%;
+  bottom: auto;
+  h1 {
+    color: red;
+    margin-bottom: 0;
+    font-size: 4vw;
+    background: #f8f9fabd;
+    border-radius: 24px;
+    border: 4px dashed #fd7621;
+    padding: 10px;
+  }
+
+  .programs {
+    margin-top: 8vh;
+    h2 {
+      background: #ff000094;
+      padding: 10px;
+      font-size: 3vh;
+    }
+    p {
+      background: #343a40b3;
+      padding: 5px;
+      text: left;
+      font-size: 3vh;
+    }
+  }
 }
 
 .footer-area {
@@ -117,7 +139,25 @@ h3.display-5 {
 .address-box {
   background: rgba(241,204,73,0.5);
 }
-@media(max-width:768px) {
+@media(max-width:992px) {
+  .main-details-homepage {
+    top: 0;
+    .carousel-caption  {
+      h1 {
+        border-radius: 8px;
+        border-width: 2px;
+        padding: 4px;
+      }
+      .programs {
+        margin-top: 2vh;
+      }
+      h2, p {
+        padding: 4px;
+        font-size: 2vh;
+        margin-bottom: 4px;
+      }
+    }
+  }
   .logo-content {
     display: inline-block;
     width: 56%;
