@@ -16,6 +16,7 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
+    config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -27,25 +28,13 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options)
+  # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
-  host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host }
-  config.action_mailer.delivery_method = :smtp
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-   address:              'smtp.gmail.com',
-   port:                 587,
-   domain:               'gmail.com',
-   user_name:            'infomatrix89@gmail.com', #ENV['gmail_username'],
-   password:             'matrix@info', #ENV['gmail_password'],
-   authentication:       'plain'
-  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -56,10 +45,6 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
-
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
@@ -68,7 +53,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  # Raises error for missing translations
+  # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
   # Use an evented file watcher to asynchronously detect changes in source code,

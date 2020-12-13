@@ -17,6 +17,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'pages#index'
   #get 'homes/index'
-  #post 'homes/index'
-  
+  #post 'homes/index
 end

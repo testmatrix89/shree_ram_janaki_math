@@ -110,6 +110,12 @@
             </button>
           </div>
         <% end %>
+        <div>
+          <div id="datepicker"></div>
+        </div>
+        <div>
+          <input id="autocomplete" title="type &quot;a&quot;">
+        </div>
         <%= form_for Contact.new do |f| %>
           <%= f.hidden_field :pagename, :value => controller.controller_name %>
           <div class="form-group">

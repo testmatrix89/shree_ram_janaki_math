@@ -14,7 +14,7 @@
  *= stub active_admin.scss
  *= require lightbox
  */
- 
+@import 'jquery-ui';
 @import "bootstrap";
 @import 'lightbox';
 .logo {
