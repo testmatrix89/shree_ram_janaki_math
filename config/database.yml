@@ -3,7 +3,7 @@
 
 development:
   adapter: postgresql
-  database: glorious_furnitures_db
+  database: srj_db
   username: postgres
   password: root@123
   pool: 5
@@ -15,7 +15,7 @@ development:
 
 test:
   adapter: postgresql
-  database: glorious_furnitures_db
+  database: srj_db
   username: postgres
   password: root@123
   pool: 5
@@ -23,7 +23,7 @@ test:
 
 production:
   adapter: postgresql
-  database: glorious_furnitures_db
+  database: srj_db
   username: postgres
   password: root@123
   pool: 5
