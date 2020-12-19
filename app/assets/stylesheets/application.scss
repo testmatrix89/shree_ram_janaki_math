@@ -79,10 +79,14 @@ nav.navbar.bg-dark {
 }
 .blog-footer {
     padding: 1.5rem 0;
-    color: #999;
+    color: #fff;
     text-align: center;
-    background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
+    background-color: #ffc107;
+    border-top: .05rem solid #dc3545;
+}
+
+.form-control {
+  border-color: #dc3545;
 }
 
 h5.display-4 {
@@ -136,6 +140,10 @@ h3.display-5 {
   background-position: bottom;
 }
 
+#contact-ftr {
+  background: rgba(255, 193, 7, 0.52%);
+}
+
 .address-box {
   background: rgba(241,204,73,0.5);
 }
@@ -171,7 +179,12 @@ h3.display-5 {
       margin-bottom: 0;
     }
   }
+
+  .footer-texts span {
+    display: block;
+  }
 }
+
 
 @media(max-width:768px) {
   .starter-template {

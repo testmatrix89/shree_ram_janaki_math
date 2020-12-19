@@ -52,9 +52,6 @@ $(document).ready(function(){
     "Scala",
     "Scheme"
   ];
-  $( "#autocomplete" ).autocomplete({
-    source: availableTags
-  });
 
   $( "#datepicker" ).datepicker({
     inline: true
