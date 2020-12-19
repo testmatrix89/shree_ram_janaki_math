@@ -186,7 +186,7 @@ h3.display-5 {
       }
       h2, p {
         padding: 4px;
-        font-size: 2vh;
+        font-size: 14px;
         margin-bottom: 4px;
       }
     }
@@ -234,4 +234,8 @@ h3.display-5 {
 	h5.display-4 {
 	    font-size: 2rem;
 	}
+  .logo-content {
+    display: inline-block;
+    width: 50%;
+  }
 }
