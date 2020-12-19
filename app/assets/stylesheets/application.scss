@@ -73,9 +73,22 @@ nav.navbar.bg-dark {
 	}
 }
 
+.programs-box {
+  background-image: image-url('first.jpg');
+  background-size: 100%;
+  background-position: center;
+  .bg-warning {
+    background-color: rgba(255, 193, 7, 0.64) !important;
+  }
+}
+
 .starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  h1 {
+    font-size: 24px;
+    color: #fff;
+  }
 }
 .blog-footer {
     padding: 1.5rem 0;
@@ -96,41 +109,46 @@ h3.display-5 {
 	font-size: 1.17em;
 }
 
-.main-details-homepage {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 999;
-}
-
 .carousel-caption  {
-  top: 10%;
-  bottom: auto;
+  padding-top: 0;
+  padding-bottom: 0px;
   h1 {
-    color: red;
+    color: white;
     margin-bottom: 0;
-    font-size: 4vw;
-    background: #f8f9fabd;
+    font-size: 3vw;
+    background: rgba(0, 0, 0, 0.58);
     border-radius: 24px;
-    border: 4px dashed #fd7621;
+    border: 2px dashed #fd7621;
     padding: 10px;
   }
+}
 
-  .programs {
-    margin-top: 8vh;
-    h2 {
-      background: #ff000094;
-      padding: 10px;
-      font-size: 3vh;
-    }
-    p {
-      background: #343a40b3;
-      padding: 5px;
-      text: left;
-      font-size: 3vh;
-    }
+.programs {
+  text-align: center;
+  width: 75%;
+  color: #fff;
+  margin: 0 auto;
+  border: 10px solid rgba(255, 0, 0, 0.58);
+  padding-bottom: 20px;
+  border-radius: 15px;
+  h2 {
+    background: #ff000094;
+    padding: 7px 10px 15px;
+    font-size: 4vh;
+  }
+  p {
+    background: rgba(255, 255, 255, 0.74);
+    padding: 5px;
+    margin: 20px 20px 0;
+    font-size: 3vh;
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+.math-sthans {
+  h3 {
+    color: yellow;
   }
 }
 
@@ -149,20 +167,25 @@ h3.display-5 {
 }
 @media(max-width:992px) {
   .main-details-homepage {
-    top: 0;
     .carousel-caption  {
       h1 {
         border-radius: 8px;
         border-width: 2px;
         padding: 4px;
       }
-      .programs {
-        margin-top: 2vh;
-      }
       h2, p {
         padding: 4px;
         font-size: 2vh;
         margin-bottom: 4px;
+      }
+    }
+  }
+  .programs {
+    margin-top: 2vh;
+    width: 90%;
+    p {
+      span {
+        display: block;
       }
     }
   }
@@ -174,8 +197,9 @@ h3.display-5 {
     }
   }
   .starter-template {
+    padding: 1rem 1.5rem;
     h1 {
-      font-size: 18px;
+      font-size: 4vh;
       margin-bottom: 0;
     }
   }
@@ -188,7 +212,7 @@ h3.display-5 {
 
 @media(max-width:768px) {
   .starter-template {
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
 }
 
