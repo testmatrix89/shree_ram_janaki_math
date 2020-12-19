@@ -46,8 +46,8 @@
   <div class="container color-white">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h4>Join Our Mailing List</h4>
-        <p>Be the first to hear about new designs, upcoming sales, and furniture trends.</p>
+        <h4>जुड़े संपर्क लिस्ट से </h4>
+        <p>मठ पर होने वाले कार्यक्रम के बारे में और आस्था से जुड़ी जानकारी के लिए जुड़िये हमारे संपर्क लिस्ट से| </p>
       </div>
     </div>
     <div class="row">
@@ -56,10 +56,10 @@
           <div class="form-group row">
             <%= f.hidden_field :pagename, :value => controller.controller_name %>
             <div class="col-8 col-sm-10">
-              <%= f.text_field :email, :required => true, type: 'email', class: 'form-control form-control', placeholder: 'Enter your email'  %>
+              <%= f.text_field :email, :required => true, type: 'email', class: 'form-control form-control', placeholder: 'अपना ईमेल आईडी डाले'  %>
             </div>
             <div class="col-3 col-sm-2">
-              <%= f.submit 'Subscribe', class: 'btn btn-danger mb-2' %>
+              <%= f.submit 'Subscribe', value: 'लिस्ट से जुड़े ', class: 'btn btn-danger mb-2' %>
             </div>
           </div>
           <% end %>
@@ -83,7 +83,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <h4>Get In Touch</h4>
+          <h4>संपर्क आस्था बनाये रखे </h4>
           <!--<form>
             <div class="form-group">
               <input type="name" class="form-control" id="exampleInputName" placeholder="Enter name">
@@ -109,23 +109,23 @@
           <%= form_for Contact.new do |f| %>
             <%= f.hidden_field :pagename, :value => controller.controller_name %>
             <div class="form-group">
-            <%= f.text_field :name, :required => true, class: 'form-control', placeholder: 'Enter name'  %>
+            <%= f.text_field :name, :required => true, class: 'form-control', placeholder: 'अपना नाम लिखे '  %>
             </div>
             <div class="form-group">
-            <%= f.text_field :email, :required => true, type: 'email', class: 'form-control', placeholder: 'Enter email' %>
+            <%= f.text_field :email, :required => true, type: 'email', class: 'form-control', placeholder: 'अपना ईमेल आईडी लिखे' %>
             </div>
             <div class="form-group">
-            <%= f.text_field :body, :required => true, class: 'form-control', placeholder: 'Messages' %>
+            <%= f.text_field :body, :required => true, class: 'form-control', placeholder: 'अपना सन्देश लिखे' %>
             </div>
-            <div>
-              <%= f.submit 'Submit', class: 'btn btn-danger' %>
+            <div class="text-center">
+              <%= f.submit 'Submit', value: 'भेजे', class: 'btn btn-danger' %>
             </div>
           <% end %>
         </div>
         <hr class="d-sm-none" width="100%">
-        <div class="col-sm-6 address-box">
-          <h4>Shree Ram Janaki Math</h4>
-          <p>Gaon: Kalyanpur, Thana Patahi, District - East Champaran, Bihar - 845457</p>
+        <div class="col-sm-6 address-box py-4">
+          <h4>श्री राम जानकी मठ</h4>
+          <p>गाँव:- कल्याणपुर <br />थाना:- पताही <br />जिला:- पूर्वी चंपारण <br />बिहार - 845457</p>
           <p>+91-8800133342</p>
         </div>
       </div>
@@ -137,7 +137,7 @@
 
       <!-- FOOTER -->
 <footer class="blog-footer">
-  <div>Copyright © <%= Date.current.year %> Shree Ram Janaki Math, Kalyanpur - All Rights Reserved.</div>
+  <div>Copyright © <%= Date.current.year %> 🙏 श्री राम जानकी मठ, कल्याणपुर 🙏 - All Rights Reserved.</div>
 </footer>
   </body>
 </html>
