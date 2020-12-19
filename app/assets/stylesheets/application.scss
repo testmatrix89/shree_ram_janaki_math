@@ -18,6 +18,10 @@
 @import "bootstrap";
 @import 'lightbox';
 
+body {
+  padding-top: 80px;
+}
+
 nav.navbar.bg-dark {
   background: #fd7621 !important; 
 }
