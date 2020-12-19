@@ -27,5 +27,8 @@
 /public/assets
 .byebug_history
 
+# Gemloc file
+Gemfile.lock
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
