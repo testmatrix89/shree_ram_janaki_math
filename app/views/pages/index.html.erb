@@ -5,6 +5,12 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
   </ol> -->
+
+  <%= link_to image_tag("first.jpg", border:0), image_url('first.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
+  <%= link_to image_tag("first.jpg", border:0), image_url('second.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
+  <%= link_to image_tag("first.jpg", border:0), image_url('third.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
+  <%= link_to image_tag("first.jpg", border:0), image_url('forth.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
+
   
   <div class="carousel-inner">
     <div class="main-details-homepage">
@@ -13,16 +19,16 @@
       </div>
     </div>
     <div class="carousel-item active">
-      <%= image_tag("first.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
+      <%= image_tag("first.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("second.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
+      <%= image_tag("second.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("third.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
+      <%= image_tag("third.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("forth.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
+      <%= image_tag("forth.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -41,6 +47,9 @@
       <h2>अगला महोत्सव कार्यक्रम:</h2>
       <p>श्री राम विवाहपञ्चमी:- <span>19 Dec, 2020</span></p>
       <p>तुलसी पूजन दिवस:- <span>25 Dec, 2020</span></p>
+    </div>
+    <div class="text-center pt-5">
+      <%= link_to 'गैलरी', image_url('first.jpg'), class: 'btn btn-danger', data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
     </div>
   </div>
 </div>
@@ -62,7 +71,6 @@
         </div>
       </div>
       <div class="col-md-4">
-        <hr />
         <h3 class="display-5 text-center">श्री हनुमान जी का स्थान  </h3>
         <div class="card mb-4 shadow-sm">
           <%= image_tag("small-temple.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
@@ -72,12 +80,11 @@
         </div>
       </div>
       <div class="col-md-4">
-        <hr />
         <h3 class="display-5 text-center">श्री कलिका माता जी का स्थान</h3>
         <div class="card mb-4 shadow-sm">
           <%= image_tag("small-temple.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
           <div class="card-body">
-            <p class="lead text-center">श्री कलिका माता जी का स्थान ...</p>
+            <p class="lead text-center">श्री कलिका माता जी का स्थान...</p>
           </div>
         </div>
       </div>  
