@@ -24,7 +24,14 @@ body {
 
 nav.navbar.bg-dark {
   background: #fd7621 !important; 
+  background-image: image-url('ram-ram.png') !important;
 }
+
+.ram {
+  background-image: image-url('ram-ram.png') !important;
+  background-position: center  !important;
+}
+
 .logo {
 	margin-top: -8px;
 	margin-bottom: -8px;
