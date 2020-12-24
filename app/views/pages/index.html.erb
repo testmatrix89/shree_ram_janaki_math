@@ -58,11 +58,13 @@
     <div class="programs">
       <h2>अगला महोत्सव उत्सव:</h2>
       <% @math_programs.each do |program| %>
-        <p>
-          <%= link_to program_path(program) do %>
-            <%= program.program_name %>:- <span><%= date_checks(program.program_date) %></span>
-          <% end %>
-        </p>
+        <% if program.program_date >= Time.now %>
+          <p>
+            <%= link_to program_path(program) do %>
+              <%= program.program_name %>:- <span><%= date_checks(program.program_date) %></span>
+            <% end %>
+          </p>
+        <% end %>
       <% end %>
       <%= link_to 'सभी उत्सव', programs_path, class: 'btn btn-danger mt-4' %>
     </div>

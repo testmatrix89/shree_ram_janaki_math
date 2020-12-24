@@ -3,25 +3,52 @@
     <div class="container p-5">
       <p id="notice"><%= notice %></p>
 
-      <h1 class="border-bottom mb-4 text-center border-warning">सभी उत्सव</h1>
+      <h1 class="border-bottom mb-4 py-2 text-center border-warning">सभी उत्सव</h1>
 
       <div class="row text-center">
         <% @programs.each do |program| %>
-          <div class="col-md-4">
-            <%= link_to program do %>
-              <div class="card bg-danger text-white mb-4 shadow-sm">
-                <div class="card-header"><strong><%= program.program_name %></strong></div>
-                <div class="card-body">
-                  <div class="card-title"><%= date_checks(program.program_date) %></div>
-                  <div class="card-text"><%= program.program_place %></div>
-                  <!-- <p><%= program.program_activity %></p>
-                  <p><%= program.program_description %></p> -->
+          <% if program.program_date >= Time.now %> 
+            <div class="col-md-4">
+              <%= link_to program do %>
+                <div class="card bg-danger text-white mb-4 shadow-sm">
+                  <div class="card-header"><strong><%= program.program_name %></strong></div>
+                  <div class="card-body">
+                    <div class="card-title"><%= date_checks(program.program_date) %></div>
+                    <div class="card-text"><%= program.program_place %></div>
+                    <!-- <p><%= program.program_activity %></p>
+                    <p><%= program.program_description %></p> -->
+                  </div>
                 </div>
-              </div>
-            <% end %>
-          </div>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       </div>
+      <div class="">
+        <h1 class="border-bottom mb-4 mt-4 border-top py-2 text-center border-warning">श्रद्धापूर्वक संपन्न उत्सव</h1>
+      </div>
+      <div class="row text-center">
+        <% @programs.each do |program| %>
+          <% if program.program_date < Time.now %>
+            <div class="col-md-4">
+              <%= link_to program do %>
+                <div class="card bg-danger text-white mb-4 shadow-sm">
+                  <div class="card-header"><strong><%= program.program_name %></strong></div>
+                  <div class="card-body">
+                    <div class="card-title"><%= date_checks(program.program_date) %></div>
+                    <div class="card-text"><%= program.program_place %></div>
+                    <!-- <p><%= program.program_activity %></p>
+                    <p><%= program.program_description %></p> -->
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+
+
     </div>
   </div>
 </div>
