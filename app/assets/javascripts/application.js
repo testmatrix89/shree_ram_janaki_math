@@ -19,14 +19,18 @@
 //= require_tree .
 
 $(document).ready(function(){
-	lightbox.init();
-	$(".carousel").swipe({
-		swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-			if (direction == 'left') $('.carousel-control-next').click();
-			if (direction == 'right') $('.carousel-control-prev').click();
-		},
-		allowPageScroll:"vertical"
-	});
+  lightbox.init();
+  $(document).on('click', '.navbar-dark .navbar-nav .nav-link', function(){
+    console.log('yes clicking');
+    $('button.navbar-toggler').trigger('click');
+  } )
+  $(".carousel").swipe({
+    swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+      if (direction == 'left') $('.carousel-control-next').click();
+      if (direction == 'right') $('.carousel-control-prev').click();
+    },
+    allowPageScroll:"vertical"
+  });
 
   var availableTags = [
     "ActionScript",

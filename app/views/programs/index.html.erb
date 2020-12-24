@@ -1,10 +1,7 @@
 <div class='content-area'>
   <div class="content-area-box">
     <div class="container p-5">
-      <p id="notice"><%= notice %></p>
-
       <h1 class="border-bottom mb-4 py-2 text-center border-warning">सभी उत्सव</h1>
-
       <div class="row text-center">
         <% @programs.each do |program| %>
           <% if program.program_date >= Time.now %> 
@@ -24,9 +21,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class="">
-        <h1 class="border-bottom mb-4 mt-4 border-top py-2 text-center border-warning">श्रद्धापूर्वक संपन्न उत्सव</h1>
-      </div>
+      <h3 class="border-bottom mb-4 mt-4 border-top py-2 text-center border-warning">श्रद्धापूर्वक संपन्न उत्सव</h3>
       <div class="row text-center">
         <% @programs.each do |program| %>
           <% if program.program_date < Time.now %>
