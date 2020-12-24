@@ -16,10 +16,14 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ram">
       <!-- Navigation -->
     <div class="container">
-        <a class="navbar-brand logo" href="/"></a>
-        <a href="/" class="logo-content">
-          <span>श्री राम जानकी</span>
-          <span>ठरेश्री बाबा मठ, कल्याणपुर</span>
+        <a class="navbar-brand logo" href="/">
+          <span class="logo-img">
+            <%= image_tag("logo.svg", border:0, width: '100%', alt: "Shree Ram Janaki Math") %>
+          </span>
+          <span class="logo-content">
+            <span>श्री राम जानकी</span>
+            <span>ठरेश्री बाबा मठ, कल्याणपुर</span>
+          </span>
           <!--<%= image_tag("logo.png", border:0, width: '250', alt: "Shree Ram Janaki Math") %> -->
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,6 +85,7 @@
               </div>
             <% end %>
         </div>
+        <span id="contact"></span>
       </div> 
     </div>
   </div>
