@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    redirect_to product_details_path
+    #redirect_to product_details_path
   end
 
   def show
@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.update(params_permit)
-    byebug
     if @product
       redirect_to products_path
     else

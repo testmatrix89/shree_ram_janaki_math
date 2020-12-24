@@ -6,3 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'testmatrix89@gmail.com', password: 'matrix', password_confirmation: 'matrix') # if Rails.env.development?
+
+math_sthan = [
+      { sthan_name: "श्री राम परिवार मंदिर", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम परिवार मंदिर' },
+      { sthan_name: "शिव परिवार", sthan_image: '', sthan_description: 'शिव परिवार' },
+      { sthan_name: "श्री ठरेश्रीबाबा जी का स्थान", sthan_image: '', sthan_description: 'श्री ठरेश्रीबाबा जी का स्थान' },
+      { sthan_name: "श्री हनुमान जी का स्थान", sthan_image: 'shree-hanuman-ji.jpg', sthan_description: 'श्री हनुमान जी का स्थान' },
+      { sthan_name: "श्री कलिका माता जी का स्थान", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान' }
+    ]
+
+MathSthan.delete_all
+math_sthan.each do |sthan|
+  MathSthan.create!({"sthan_name" => sthan[:sthan_name] , "sthan_image" => [], "sthan_description" => sthan[:sthan_description]})
+end

@@ -19,7 +19,19 @@
       </div>
     </div>
     <div class="carousel-item active">
+      <%= image_tag("shree_ram_parivar.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("madir-pujan.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("mandir-view.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+    </div>
+    <div class="carousel-item">
       <%= image_tag("first.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("madir-pokhara.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
       <%= image_tag("second.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
@@ -44,12 +56,18 @@
 <div class="programs-box">
   <div class="album py-5 bg-warning">
     <div class="programs">
-      <h2>अगला महोत्सव कार्यक्रम:</h2>
-      <p>श्री राम विवाहपञ्चमी:- <span>19 Dec, 2020</span></p>
-      <p>तुलसी पूजन दिवस:- <span>25 Dec, 2020</span></p>
+      <h2>अगला महोत्सव उत्सव:</h2>
+      <% @math_programs.each do |program| %>
+        <p>
+          <%= link_to program_path(program) do %>
+            <%= program.program_name %>:- <span><%= program.program_date.strftime('%e %b, %Y को %l:%M %P बजे') %></span>
+          <% end %>
+        </p>
+      <% end %>
+      <%= link_to 'सभी उत्सव', programs_path, class: 'btn btn-danger mt-4' %>
     </div>
-    <div class="text-center pt-5">
-      <%= link_to 'गैलरी', image_url('first.jpg'), class: 'btn btn-danger', data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
+    <div class="text-center">
+      <% link_to 'गैलरी', image_url('first.jpg'), class: 'btn btn-danger', data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
     </div>
   </div>
 </div>
@@ -61,33 +79,17 @@
     </div>
     <hr />
     <div class="row math-sthans">
+      <% @math_sthans.each do |sthan| %>
       <div class="col-md-4">
-        <h3 class="display-5 text-center">श्री ठरेश्रीबाबा जी का स्थान  </h3>
+        <h3 class="display-5 text-center"><%= sthan[:sthan_name] %></h3>
         <div class="card mb-4 shadow-sm">
-          <%= image_tag("small-temple.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
+          <%= image_tag( math_sthan_iamge_load(sthan[:sthan_image]), border:0, width: '100%', alt: sthan[:sthan_name], class: "d-block w-100 slider-class") %>
           <div class="card-body">
-            <p class="lead text-center">श्री ठरेश्रीबाबा जी का स्थान...</p>
+            <p class="lead text-center"><%= sthan[:sthan_description] %></p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <h3 class="display-5 text-center">श्री हनुमान जी का स्थान  </h3>
-        <div class="card mb-4 shadow-sm">
-          <%= image_tag("small-temple.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
-          <div class="card-body">
-            <p class="lead text-center">श्री हनुमान जी का स्थान...</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h3 class="display-5 text-center">श्री कलिका माता जी का स्थान</h3>
-        <div class="card mb-4 shadow-sm">
-          <%= image_tag("small-temple.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class") %>
-          <div class="card-body">
-            <p class="lead text-center">श्री कलिका माता जी का स्थान...</p>
-          </div>
-        </div>
-      </div>  
+      <% end %>
     </div>
   </div>
 </div>

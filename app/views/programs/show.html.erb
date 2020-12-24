@@ -1,0 +1,33 @@
+<div class='content-area'>
+  <div class="content-area-box">
+    <div class="container p-5">
+      <p id="notice"><%= notice %></p>
+      <h1 class="border-bottom mb-4 text-center border-warning">उत्सव विवरण</h1>
+      <p>
+        <strong>उत्सव:</strong>
+        <%= @program.program_name %>
+      </p>
+
+      <p>
+        <strong>उत्सव दिनांक:</strong>
+        <%= @program.program_date.strftime('%e %b, %Y को %l:%M %P बजे') %>
+      </p>
+
+      <p>
+        <strong>उत्सव स्थान:</strong>
+        <%= @program.program_place %>
+      </p>
+
+      <p>
+        <strong>उत्सव कार्यक्रम:</strong>
+        <%= @program.program_activity %>
+      </p>
+
+      <p>
+        <strong>उत्सव का विस्तृत विवरण:</strong>
+        <%= @program.program_description %>
+      </p>
+      <%= link_to 'Back', programs_path %>
+    </div>
+  </div>
+</div>

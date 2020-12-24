@@ -16,7 +16,12 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ram">
       <!-- Navigation -->
     <div class="container">
-        <a class="navbar-brand logo" href="/"></a><a href="/" class="logo-content"><%= image_tag("logo.png", border:0, width: '250', alt: "Shree Ram Janaki Math") %></a>
+        <a class="navbar-brand logo" href="/"></a>
+        <a href="/" class="logo-content">
+          <span>श्री राम जानकी</span>
+          <span>ठरेश्री बाबा मठ, कल्याणपुर</span>
+          <!--<%= image_tag("logo.png", border:0, width: '250', alt: "Shree Ram Janaki Math") %> -->
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,10 +30,13 @@
           </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">वास-स्थान</a>
+                    <a class="nav-link" href="/">जय श्री राम</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">मठ के बारे में</a>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'उत्सव', programs_path, class: 'nav-link' %>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">संपर्क</a>
