@@ -8,4 +8,12 @@ module ApplicationHelper
       { sthan_name: "श्री कलिका माता जी का स्थान", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान' }
     ]
   end
+
+  def date_checks(date)
+    if date.present?
+      actual_format = date.strftime('%e %b, %Y को %l:%M %P बजे')
+    else
+      ''
+    end
+  end
 end

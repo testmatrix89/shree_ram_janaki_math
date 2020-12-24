@@ -12,7 +12,7 @@
               <div class="card bg-danger text-white mb-4 shadow-sm">
                 <div class="card-header"><strong><%= program.program_name %></strong></div>
                 <div class="card-body">
-                  <div class="card-title"><%= program.program_date.strftime('%e %b, %Y को %l:%M %P बजे') %></div>
+                  <div class="card-title"><%= date_checks(program.program_date) %></div>
                   <div class="card-text"><%= program.program_place %></div>
                   <!-- <p><%= program.program_activity %></p>
                   <p><%= program.program_description %></p> -->

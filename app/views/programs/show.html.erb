@@ -10,7 +10,7 @@
 
       <p>
         <strong>उत्सव दिनांक:- </strong>
-        <%= @program.program_date.strftime('%e %b, %Y को %l:%M %P बजे') %>
+        <%= date_checks(@program.program_date) %>
       </p>
 
       <p>

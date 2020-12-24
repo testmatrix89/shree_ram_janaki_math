@@ -60,7 +60,7 @@
       <% @math_programs.each do |program| %>
         <p>
           <%= link_to program_path(program) do %>
-            <%= program.program_name %>:- <span><%= program.program_date.strftime('%e %b, %Y को %l:%M %P बजे') %></span>
+            <%= program.program_name %>:- <span><%= date_checks(program.program_date) %></span>
           <% end %>
         </p>
       <% end %>
