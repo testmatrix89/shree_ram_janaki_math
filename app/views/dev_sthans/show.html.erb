@@ -1,0 +1,14 @@
+<div class='content-area'>
+  <div class="content-area-box">
+    <div class="container py-5">
+      <h1 class="border-bottom mb-0 text-center border-warning"><%= @dev_sthan[:sthan_name] %> </h1>
+      <div class="mb-3">
+        <%= image_tag dev_sthan_image_load(@dev_sthan.sthan_image, @dev_sthan[:label]), width: '100%' %>
+      </div>
+      <div class="mb-4">
+        <%= @dev_sthan[:sthan_description].html_safe %>
+      </div>
+      <%= link_to 'Back', dev_sthans_path %>
+    </div>
+  </div>
+</div>

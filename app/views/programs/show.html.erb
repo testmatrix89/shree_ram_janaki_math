@@ -1,32 +1,28 @@
 <div class='content-area'>
   <div class="content-area-box">
-    <div class="container p-5">
+    <div class="container py-5">
       <p id="notice"><%= notice %></p>
       <h1 class="border-bottom mb-4 text-center border-warning">उत्सव विवरण</h1>
       <p>
         <strong>उत्सव:- </strong>
         <%= @program.program_name %>
       </p>
-
       <p>
         <strong>उत्सव दिनांक:- </strong>
         <%= date_checks(@program.program_date) %>
       </p>
-
       <p>
         <strong>उत्सव स्थान:- </strong>
         <%= @program.program_place %>
       </p>
-
       <p>
         <strong>उत्सव कार्यक्रम:- </strong>
         <%= @program.program_activity %>
       </p>
-
       <p>
         <strong>उत्सव का विस्तृत विवरण:- </strong>
         <p>
-          <%= @program.program_description %>
+          <%= @program.program_description.html_safe %>
         </p>
       </p>
       <%= link_to 'Back', programs_path %>

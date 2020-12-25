@@ -1,0 +1,10 @@
+[
+  { sthan_name: "श्री राम परिवार मंदिर", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम परिवार मंदिर', label: 'shree_ram_parivar' },
+  { sthan_name: "शिव परिवार", sthan_image: '', sthan_description: 'शिव परिवार', label: 'shree-shiv-parivar' },
+  { sthan_name: "श्री ठरेश्रीबाबा जी का स्थान", sthan_image: '', sthan_description: 'श्री ठरेश्रीबाबा जी का स्थान', label: 'shree-thareshee-baba' },
+  { sthan_name: "श्री हनुमान जी का स्थान", sthan_image: 'shree-hanuman-ji-home.jpg', sthan_description: 'श्री हनुमान जी का स्थान', label: 'shree-hanuman-ji' },
+  { sthan_name: "श्री कलिका माता जी का स्थान", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान', label: 'kalika-mata' },
+  { sthan_name: "अष्टयाम बंगला", sthan_image: '', sthan_description: 'अष्टयाम बंगला', label: 'ashtyam-bangala' },
+  { sthan_name: "मठ के समिप सरोवर", sthan_image: '', sthan_description: 'मठ के समिप सरोवर ', label: 'sarovar' },
+  { sthan_name: "गौशाला", sthan_image: '', sthan_description: 'गौशाला', label: 'gaushala' }
+]

@@ -20,10 +20,13 @@
 
 $(document).ready(function(){
   lightbox.init();
+
   $(document).on('click', '.navbar-dark .navbar-nav .nav-link', function(){
-    console.log('yes clicking');
-    $('button.navbar-toggler').trigger('click');
-  } )
+    if($('button.navbar-toggler').is(':visible')) {
+      $('button.navbar-toggler').trigger('click');
+    }
+  })
+
   $(".carousel").swipe({
     swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
       if (direction == 'left') $('.carousel-control-next').click();

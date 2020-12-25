@@ -1,10 +1,10 @@
 <div class='content-area'>
   <div class="content-area-box">
-    <div class="container p-5">
+    <div class="container py-5">
       <h1 class="border-bottom mb-4 py-2 text-center border-warning">सभी उत्सव</h1>
       <div class="row text-center">
         <% @programs.each do |program| %>
-          <% if program.program_date >= Time.now %> 
+          <% if program_date_start(program.program_date) %> 
             <div class="col-md-4">
               <%= link_to program do %>
                 <div class="card bg-danger text-white mb-4 shadow-sm">
@@ -24,7 +24,7 @@
       <h3 class="border-bottom mb-4 mt-4 border-top py-2 text-center border-warning">श्रद्धापूर्वक संपन्न उत्सव</h3>
       <div class="row text-center">
         <% @programs.each do |program| %>
-          <% if program.program_date < Time.now %>
+          <% if program_date_end(program.program_date) %>
             <div class="col-md-4">
               <%= link_to program do %>
                 <div class="card bg-danger text-white mb-4 shadow-sm">
@@ -41,9 +41,6 @@
           <% end %>
         <% end %>
       </div>
-
-
-
     </div>
   </div>
 </div>

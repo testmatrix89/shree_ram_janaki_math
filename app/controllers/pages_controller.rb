@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   	# @products = Product.all
   	# @order_item = current_order.order_items.new
     @math_programs = Program.all
-    @math_sthans = math_dev_sthan #MathSthan.all
+    @dev_sthans = DevSthan.all #math_dev_sthan #
   end
 
   # def mattresses

@@ -52,6 +52,7 @@ gem 'draper'
 gem 'pundit'
 
 gem 'activeadmin_json_editor', '~> 0.0.7'
+gem 'activeadmin_quill_editor'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

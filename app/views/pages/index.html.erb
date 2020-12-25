@@ -5,12 +5,6 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
   </ol> -->
-
-  <%= link_to image_tag("first.jpg", border:0), image_url('first.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
-  <%= link_to image_tag("first.jpg", border:0), image_url('second.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
-  <%= link_to image_tag("first.jpg", border:0), image_url('third.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
-  <%= link_to image_tag("first.jpg", border:0), image_url('forth.jpg'), class: "d-none w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
-
   
   <div class="carousel-inner">
     <div class="main-details-homepage">
@@ -28,19 +22,19 @@
       <%= image_tag("mandir-view.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("first.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+      <%= image_tag("kalika-mata.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("madir-pokhara.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+      <%= image_tag("sarovar.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("second.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+      <%= image_tag("shree-hanuman-ji.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("third.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+      <%= image_tag("shree-thareshee-baba.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
     <div class="carousel-item">
-      <%= image_tag("forth.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+      <%= image_tag("gaushala.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -58,7 +52,7 @@
     <div class="programs">
       <h2>अगला महोत्सव उत्सव:</h2>
       <% @math_programs.each do |program| %>
-        <% if program.program_date >= Time.now %>
+        <% if program_date_start(program.program_date) %>
           <p>
             <%= link_to program_path(program) do %>
               <%= program.program_name %>:- <span><%= date_checks(program.program_date) %></span>
@@ -67,9 +61,6 @@
         <% end %>
       <% end %>
       <%= link_to 'सभी उत्सव', programs_path, class: 'btn btn-danger mt-4' %>
-    </div>
-    <div class="text-center">
-      <% link_to 'गैलरी', image_url('first.jpg'), class: 'btn btn-danger', data: { lightbox: "lightboxId"}, 'data-title': 'images' %>
     </div>
     <span id="about"></span>
   </div>
@@ -81,16 +72,18 @@
       <h1>मठ के बारे में कुछ महत्वपूर्ण आस्थाए</h1>
     </div>
     <hr />
-    <div class="row math-sthans">
-      <% @math_sthans.each do |sthan| %>
+    <div class="row math-sthans link-inherit">
+      <% @dev_sthans.each do |sthan| %>
       <div class="col-md-4">
-        <h3 class="display-5 text-center"><%= sthan[:sthan_name] %></h3>
-        <div class="card mb-4 shadow-sm">
-          <%= image_tag( math_sthan_iamge_load(sthan[:sthan_image]), border:0, width: '100%', alt: sthan[:sthan_name], class: "d-block w-100 slider-class") %>
-          <div class="card-body">
-            <p class="lead text-center"><%= sthan[:sthan_description] %></p>
+        <%= link_to dev_sthan_url(sthan) do %>
+          <h3 class="display-5 text-center"><%= sthan[:sthan_name] %></h3>
+          <div class="card mb-4 shadow-sm">
+            <%= image_tag(dev_sthan_image_load(sthan.sthan_image, sthan[:label], '-small'), border:0, width: '100%', alt: sthan[:sthan_name], class: "d-block w-100 slider-class") %>
+            <div class="card-body">
+              <p class="lead text-center"><%= sthan[:sthan_description].html_safe %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
       <% end %>
     </div>

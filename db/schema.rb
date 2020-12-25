@@ -54,10 +54,11 @@ ActiveRecord::Schema.define(version: 2020_12_20_165957) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "math_sthans", force: :cascade do |t|
+  create_table "dev_sthans", force: :cascade do |t|
     t.string "sthan_name"
     t.json "sthan_image"
     t.text "sthan_description"
+    t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
