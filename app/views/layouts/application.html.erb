@@ -37,7 +37,7 @@
                     <a class="nav-link" href="/">जय श्री राम</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#about">मठ के बारे में</a>
+                    <a class="nav-link" href="javascript: void(0)" data-target="about">मठ के बारे में</a>
                 </li>
                 <li class="nav-item">
                   <%= link_to 'देव स्थान', dev_sthans_path, class: 'nav-link' %>
@@ -46,7 +46,7 @@
                   <%= link_to 'उत्सव', programs_path, class: 'nav-link' %>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#contact">संपर्क</a>
+                    <a class="nav-link" href="javascript: void(0)" data-target="contact">संपर्क</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +69,6 @@
       <div class="col-md-12" style="max-width: 768px;margin:auto;">
         <%= form_for(Subscriber.new, remote: true) do |f| %>
           <div class="form-group row">
-            <%= f.hidden_field :pagename, :value => controller.controller_name %>
             <div class="col-8 col-sm-10">
               <%= f.text_field :email, :required => true, type: 'email', class: 'form-control form-control', placeholder: 'अपना ईमेल आईडी डाले'  %>
             </div>
@@ -100,30 +99,8 @@
       <div class="row">
         <div class="col-sm-6">
           <h4>संपर्क आस्था बनाये रखे </h4>
-          <!--<form>
-            <div class="form-group">
-              <input type="name" class="form-control" id="exampleInputName" placeholder="Enter name">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" placeholder="Messages"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-          <br>-->
-          <% if flash[:alert] %>
-            <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
-              <strong><%= alert %></strong>
-              <button type="button" class="close bg-danger" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <% end %>
 
-          <%= form_for Contact.new do |f| %>
-            <%= f.hidden_field :pagename, :value => controller.controller_name %>
+          <%= form_for(Contact.new, remote: true) do |f| %>
             <div class="form-group">
             <%= f.text_field :name, :required => true, class: 'form-control', placeholder: 'अपना नाम लिखे '  %>
             </div>
@@ -131,18 +108,19 @@
             <%= f.text_field :email, :required => true, type: 'email', class: 'form-control', placeholder: 'अपना ईमेल आईडी लिखे' %>
             </div>
             <div class="form-group">
-            <%= f.text_field :body, :required => true, class: 'form-control', placeholder: 'अपना सन्देश लिखे' %>
+            <%= f.text_area :body, :required => true, class: 'form-control', placeholder: 'अपना सन्देश लिखे' %>
             </div>
             <div class="text-center">
               <%= f.submit 'Submit', value: 'भेजे', class: 'btn btn-danger' %>
             </div>
           <% end %>
+          <div class="contact_box mt-2"></div>
         </div>
         <hr class="d-sm-none" width="100%">
         <div class="col-sm-6 address-box py-4 text-center">
-          <h4>श्री राम जानकी मठ</h4>
-          <p>गाँव:- कल्याणपुर <br />थाना:- पताही <br />जिला:- पूर्वी चंपारण <br />बिहार - 845457</p>
-          <p>+91-8800133342</p>
+          <h4 class="mt-3"><strong>श्री राम जानकी</strong></h4>
+          <div><strong>ठरेश्री बाबा मठ</strong></div>
+          <p>गाँव:- कल्याणपुर <br />थाना:- पताही <br />जिला:- पूर्वी चंपारण <br />बिहार - 845457<br>+91-8800133342</p>
         </div>
       </div>
     </div>

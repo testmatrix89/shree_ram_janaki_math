@@ -36,6 +36,8 @@ gem 'bootstrap', '~> 4.1.3'
 
 gem 'lightbox2-rails'
 
+gem 'friendly_id', '~> 5.4.0'
+
 # Use ActiveStorage variant
 #gem 'rmagick', '~> 2.16.0'
 gem 'mini_magick'

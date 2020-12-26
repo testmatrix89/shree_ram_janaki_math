@@ -4,7 +4,7 @@ class DevSthansController < InheritedResources::Base
   end
 
   def show
-    @dev_sthan = DevSthan.find(params[:id])
+    @dev_sthan = DevSthan.friendly.find(params[:id])
   end
 
   private
