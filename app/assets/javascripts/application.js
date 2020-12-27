@@ -49,35 +49,6 @@ $(document).ready(function(){
     allowPageScroll:"vertical"
   });
 
-  var availableTags = [
-    "ActionScript",
-    "AppleScript",
-    "Asp",
-    "BASIC",
-    "C",
-    "C++",
-    "Clojure",
-    "COBOL",
-    "ColdFusion",
-    "Erlang",
-    "Fortran",
-    "Groovy",
-    "Haskell",
-    "Java",
-    "JavaScript",
-    "Lisp",
-    "Perl",
-    "PHP",
-    "Python",
-    "Ruby",
-    "Scala",
-    "Scheme"
-  ];
-
-  $( "#datepicker" ).datepicker({
-    inline: true
-  });
-
 });
 
 function navTarget(target){

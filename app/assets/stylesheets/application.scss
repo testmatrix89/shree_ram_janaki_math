@@ -13,6 +13,7 @@
  *= require_self
  *= stub active_admin.scss
  *= require lightbox
+ *= require albums
  */
 @import 'jquery-ui';
 @import "bootstrap";
@@ -118,7 +119,7 @@ nav.navbar.bg-dark {
 }
 
 .content-area{
-  background-image: image-url('gaushala.jpg');
+  background-image: image-url('math-view.jpg');
   background-size: 100%;
   background-position: center;
   .content-area-box {
@@ -127,7 +128,7 @@ nav.navbar.bg-dark {
 }
 
 .programs-box {
-  background-image: image-url('ashtyam-bangala.jpg');
+  background-image: image-url('math-view.jpg');
   background-size: 100%;
   background-position: center;
   .bg-warning {
@@ -272,6 +273,10 @@ h3.display-5 {
 
   .footer-texts span {
     display: block;
+  }
+
+  .lb-nav a.lb-prev, .lb-nav a.lb-next {
+    opacity: 1 !important;
   }
 }
 

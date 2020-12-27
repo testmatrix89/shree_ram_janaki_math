@@ -1,0 +1,71 @@
+// Place all the styles related to the albums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// BASIC
+#lightbox-gallery{
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    li {
+      height: 16vh;
+      flex-grow: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 5px solid black;
+      a {
+        max-width: 80px;
+
+        img {
+          max-height: 100%;
+          min-width: 100%;
+          object-fit: cover;
+          vertical-align: bottom;
+        }
+      }
+    }
+    li:last-child {
+      // There's no science in using "10" here. In all my testing, this delivered the best results.
+      flex-grow: 10;
+    }
+  }
+}
+// Portrait
+
+@media (max-aspect-ratio: 1/1) {
+  #lightbox-gallery{
+    ul {
+      li {
+        height: 10vh;
+      }
+    }
+  }
+}
+
+// Short screens
+
+@media (max-height: 480px) {
+  #lightbox-gallery{
+    ul {
+      li {
+        height: 10vh;
+      }
+    }
+  }
+}
+
+// Smaller screens in portrait
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  #lightbox-gallery{
+    ul {
+      flex-direction: row;
+      li {
+        height: 10vh;
+      }
+    }
+  }
+}
