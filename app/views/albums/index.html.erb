@@ -5,7 +5,6 @@
       <div id="lightbox-gallery">
         <ul>
           <% @images.each do |image| %>
-            <%  %>
             <li>
               <%= link_to image_url(image), data: {lightbox: "math-gallery"} do %>
                 <%= image_tag(image, border:0, alt: "Shree Ram Janaki Math", class: "", data: { lightbox: "math-gallery"}, 'data-title': 'images') %>
