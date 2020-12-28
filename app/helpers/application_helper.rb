@@ -63,7 +63,8 @@ module ApplicationHelper
   end
 
   def current_date?(date)
-    date.strftime('%F')  == Time.now.strftime('%F') 
+    #date.strftime('%F')  >= Time.now.strftime('%F')
+    true
   end
 
 end

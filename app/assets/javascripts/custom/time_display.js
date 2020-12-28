@@ -35,9 +35,13 @@ function formatAMPM() {
 }
 
 function timeTense(date) {
-  var time = 'सुबह'
-  if(date.getHours() < 12 ) {
-    time = 'सुबह'
+  var time = 'प्रातः काल'
+  if(date.getHours() >= 0 && date.getHours() < 3 ) {
+    time = 'मध्य रात्रि'
+  }else if(date.getHours() >=3 && date.getHours() < 6) {
+    time = 'उषा काल' 
+  }else if(date.getHours() >= 6 && date.getHours() < 12) {
+    time = 'प्रातः काल' 
   }else if(date.getHours() >= 12 && date.getHours() < 16) {
     time = 'दोपहर' 
   }else if(date.getHours() >= 16 && date.getHours() < 20) {

@@ -6,7 +6,7 @@
         <% @suvichars.each do |suvichar| %>
           <div class="col-md-4">
             <%= link_to suvichar do %>
-              <div class="card bg-danger text-white mb-4 shadow-sm">
+              <div class="card bg-warning text-white mb-4 shadow-sm">
                 <div class="card-header"><strong><%= suvichar.suvichar_title %></strong></div>
                 <div class="card-body">
                   <div class="card-text"><%= short_description(suvichar.suvichar_text, 50).html_safe %></div>

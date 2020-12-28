@@ -6,7 +6,9 @@ class PagesController < ApplicationController
   	# @order_item = current_order.order_items.new
     @math_programs = Program.all
     @dev_sthans = DevSthan.all #math_dev_sthan #
-    @suvichar = Suvichar.all.first
+    suvichar = Suvichar.all
+    suvichar = suvichar.order! 'created_at DESC'
+    @suvichar = suvichar.first
   end
 
   # def mattresses

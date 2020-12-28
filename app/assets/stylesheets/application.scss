@@ -23,6 +23,10 @@ body {
   padding-top: 65px;
 }
 
+.navbar-toggler:not(:disabled):not(.disabled) {
+  padding: 10px !important;
+}
+
 .link-inherit a, .link-inherit a:hover {
   color: inherit;
   text-decoration: none;
@@ -222,6 +226,7 @@ h3.display-5 {
 
 .time-box {
   position: absolute;
+  top: 10px;
   text-align: center;
   line-height: 15px;
   left: 222px;
@@ -290,10 +295,14 @@ h3.display-5 {
       font-size: 24px;
     }
     p {
-      font-size: 16px;
+      font-size: 12px;
+      margin: 10px;
       span {
         display: block;
       }
+    }
+    a.btn.btn-danger.mt-4 {
+      margin-top: 0.7rem !important;
     }
   }
   .logo-content {

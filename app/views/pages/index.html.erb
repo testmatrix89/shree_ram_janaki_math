@@ -52,9 +52,9 @@
 <% if current_date?(@suvichar.updated_at) %>
   <div class="flower-bg">
     <div class="container py-3">
+      <h5 class="text-center text-white">आज का सुविचार <br />–––❀ॐ❀–––</h5>
       <div class="suvichar-box suvichar-bg text-center">
         <div class="p-3">
-          <h4>आज का सुविचार <br />–––❀ॐ❀–––</h4>
           <%= @suvichar.suvichar_text.html_safe %>
         </div>
       </div>
