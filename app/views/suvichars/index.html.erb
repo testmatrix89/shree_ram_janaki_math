@@ -1,0 +1,21 @@
+<div class='content-area'>
+  <div class="content-area-box">
+    <div class="container py-5">
+      <h1 class="border-bottom mb-4 py-2 text-center border-warning pb-2">सुविचार</h1>
+      <div class="row text-center">
+        <% @suvichars.each do |suvichar| %>
+          <div class="col-md-4">
+            <%= link_to suvichar do %>
+              <div class="card bg-danger text-white mb-4 shadow-sm">
+                <div class="card-header"><strong><%= suvichar.suvichar_title %></strong></div>
+                <div class="card-body">
+                  <div class="card-text"><%= short_description(suvichar.suvichar_text, 50).html_safe %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

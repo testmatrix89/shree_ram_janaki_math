@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
+  resources :suvichars, path: 'सुविचार', only:[:index, :show]
   get 'गैलरी', to: 'albums#index', as: :albums
   resources :programs, path: 'उत्सव'
   resources :pages, only:[:index, :show]

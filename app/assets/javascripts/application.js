@@ -17,6 +17,7 @@
 //= require lightbox
 //= require activestorage
 //= require_tree .
+//= require 'custom/time_display'
 
 $(document).ready(function(){
   lightbox.init();

@@ -2,14 +2,14 @@
   <div class="content-area-box">
     <div class="container p-4">
       <p id="notice"><%= notice %></p>
-      <h1 class="border-bottom mb-4 text-center border-warning">देव स्थान विवरण</h1>
+      <h1 class="border-bottom mb-4 text-center border-warning pb-2">देव स्थान विवरण</h1>
 
       <div class="row link-inherit">
         <% @dev_sthans.each do |sthan| %>
           <div class="col-md-4 mt-4">
             <%= link_to dev_sthan_url(sthan) do %>
-              <div class="card">
-                <h5 class="card-header"><%= sthan[:sthan_name] %></h5>
+              <div class="card border-warning">
+                <h5 class="card-header bg-warning text-white"><%= sthan[:sthan_name] %></h5>
                 <div class="card-body">
                   <%= image_tag(dev_sthan_image_load(sthan.sthan_image, sthan[:label], '-small'), border:0, width: '100%', alt: sthan[:sthan_name], class: "d-block w-100 slider-class") %>
                 </div>

@@ -21,9 +21,17 @@ dev_sthan = [
 ]
 
 math_programs = [
-      { program_name: "श्री राम परिवार मंदिर", program_date: '', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'श्री राम परिवार मंदिर' },
-      { program_name: "तुलसी पूजन दिवस महोत्सव", program_date: '', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'तुलसी पूजन दिवस महोत्सव' },
-    ]
+  { program_name: "श्री राम परिवार मंदिर", program_date: '', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'श्री राम परिवार मंदिर' },
+  { program_name: "तुलसी पूजन दिवस महोत्सव", program_date: '', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'तुलसी पूजन दिवस महोत्सव' },
+]
+
+
+suvichars = [
+  { suvichar_title: "जीवन का सिख", suvichar_image: '', suvichar_text: "<p>सारी दुनिया कहती है हार मान लो लेकिन<p>दिल धीरे से कहता है एक बार और कोशिश करतूं जरूर कर सकता है!</p>" },
+  { suvichar_title: "जीवन सिख", suvichar_image: '', suvichar_text: "<p>जो गिरकर संभल जाता है,</p>वो अक्सर जिंदगी को समझ जाता है…</p>" }
+]
+
+
 
 DevSthan.delete_all
 dev_sthan.each do |sthan|
@@ -33,4 +41,9 @@ end
 Program.delete_all
 math_programs.each do |program|
   Program.create!({"program_name" => program[:program_name] , "program_date" => '', "program_place" => program[:program_place], "program_activity" => program[:program_activity], "program_description" => program[:program_description]})
+end
+
+Suvichar.delete_all
+suvichars.each do |suvichar|
+  Suvichar.create!({"suvichar_title" => suvichar[:suvichar_title] , "suvichar_image" => '', "suvichar_text" => suvichar[:suvichar_text]})
 end

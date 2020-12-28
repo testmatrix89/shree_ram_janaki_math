@@ -7,13 +7,12 @@
   </ol> -->
   
   <div class="carousel-inner">
-    <div class="main-details-homepage">
-      <div class="carousel-caption d-md-block">
-        <h1>🙏।। जय सिया राम जय जय सिया राम ।।🙏</h1>
-      </div>
-    </div>
     <div class="carousel-item active">
       <%= image_tag("shree_ram_parivar.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
+
+        <div class="carousel-caption d-md-block">
+          <h1>🙏।। जय सिया राम जय जय सिया राम ।।🙏</h1>
+        </div>
     </div>
     <div class="carousel-item">
       <%= image_tag("madir-pujan.jpg", border:0, alt: "Shree Ram Janaki Math", class: "d-block w-100 slider-class", data: { lightbox: "lightboxId"}, 'data-title': 'images') %>
@@ -49,6 +48,19 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<% if current_date?(@suvichar.updated_at) %>
+  <div class="flower-bg">
+    <div class="container py-3">
+      <div class="suvichar-box suvichar-bg text-center">
+        <div class="p-3">
+          <h4>आज का सुविचार <br />––––🙠ॐ🙢––––</h4>
+          <%= @suvichar.suvichar_text.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <div class="programs-box">
   <div class="album py-4 bg-warning">

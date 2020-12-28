@@ -62,4 +62,8 @@ module ApplicationHelper
     end
   end
 
+  def current_date?(date)
+    date.strftime('%F')  == Time.now.strftime('%F') 
+  end
+
 end

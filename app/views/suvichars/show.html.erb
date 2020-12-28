@@ -1,0 +1,21 @@
+<div class='content-area'>
+  <div class="content-area-box">
+    <div class="container py-5">
+      <p id="notice"><%= notice %></p>
+      <h1 class="border-bottom mb-4 text-center border-warning pb-2">सुविचार</h1>
+      <div class="py-4">
+        <div class="flower-bg">
+          <div class="container py-4">
+            <div class="suvichar-box suvichar-bg text-center">
+              <div class="p-4">
+                <h4><%= @suvichar.suvichar_title %><br />––––🙠ॐ🙢––––</h4>
+                <%= @suvichar.suvichar_text.html_safe %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= link_to 'Back', suvichars_path %>
+    </div>
+  </div>
+</div>
