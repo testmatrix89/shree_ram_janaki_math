@@ -56,12 +56,13 @@ $(document).ready(function(){
   suvicharReadmoreHideShow();
 
   $('.svr-item').animate({ height: svrTwoEleHeight()}, 500);
+
   $('.suvichar-content .read-more').on('click', function(){
     if( $('.svr-item').height() <= svrTwoEleHeight() ){
-      $('.svr-item').animate({ height: $('.svr-item')[0].scrollHeight}, 'swing')
+      $('.svr-item').animate({ height: $('.svr-item')[0].scrollHeight}, 500)
       $(this).html('↑↑↑');
     }else {
-      $('.svr-item').animate({ height: svrTwoEleHeight()}, 'swing')
+      $('.svr-item').animate({ height: svrTwoEleHeight()}, 500)
       $(this).html('और पढ़े ↓');
     }
   })
