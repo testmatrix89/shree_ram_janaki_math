@@ -58,13 +58,11 @@ $(document).ready(function(){
   $('.svr-item').animate({ height: svrTwoEleHeight()}, 500);
   $('.suvichar-content .read-more').on('click', function(){
     if( $('.svr-item').height() <= svrTwoEleHeight() ){
-      $('.svr-item').animate({ height: $('.svr-item').get(0).scrollHeight}, 'swing')
-      $(this).html('↑↑↑')
-      alert('expand');
+      $('.svr-item').animate({ height: $('.svr-item')[0].scrollHeight}, 'swing')
+      $(this).html('↑↑↑');
     }else {
       $('.svr-item').animate({ height: svrTwoEleHeight()}, 'swing')
       $(this).html('और पढ़े ↓');
-      alert('collapse');
     }
   })
 
@@ -101,7 +99,7 @@ function svrTwoEleHeight() {
 }
 
 function suvicharReadmoreHideShow() {
-  if($('.svr-item').get(0).scrollHeight > svrTwoEleHeight()){
+  if($('.svr-item')[0].scrollHeight > svrTwoEleHeight()){
     $('.suvichar-content .read-more').show()
     $('.suvichar-content').addClass('btm-space')
   }else {
