@@ -29,6 +29,22 @@ $(document).ready(function(){
     }
   });
 
+  var interacted = false;
+
+  function fun(){
+    interacted = true;
+    $(window).unbind("scroll");
+    play();
+  }
+
+  $(window).bind("scroll", fun);
+
+  function play(){
+   if(interacted){
+      //play audio or video
+    ghantiAudio.play();
+   }
+  }
 
   function ringTheMandirGhanti() {
     if(ghantiAudio.paused){
@@ -62,7 +78,7 @@ $(document).ready(function(){
       $('.svr-item').animate({ height: $('.svr-item')[0].scrollHeight}, 500)
       $(this).html('↑↑↑');
     }else {
-      $('.svr-item').animate({ height: svrTwoEleHeight()}, 500)
+      $('.svr-item').animate({ height: (svrTwoEleHeight() - 2)}, 500)
       $(this).html('और पढ़े ↓');
     }
   })

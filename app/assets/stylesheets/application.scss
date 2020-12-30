@@ -308,20 +308,18 @@ h3.display-5 {
       }
     }
   }
-  .main-details-homepage {
-    .carousel-caption  {
-      bottom: 10px;
-      h1 {
-        border-radius: 8px;
-        border-width: 1.5px;
-        padding: 4px;
-        font-size: 14px;
-      }
-      h2, p {
-        padding: 4px;
-        font-size: 14px;
-        margin-bottom: 4px;
-      }
+  .carousel-caption  {
+    bottom: 10px;
+    h1 {
+      border-radius: 8px;
+      border-width: 1.5px;
+      padding: 4px;
+      font-size: 14px;
+    }
+    h2, p {
+      padding: 4px;
+      font-size: 14px;
+      margin-bottom: 4px;
     }
   }
   .programs {
