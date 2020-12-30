@@ -60,9 +60,11 @@ $(document).ready(function(){
     if( $('.svr-item').height() <= svrTwoEleHeight() ){
       $('.svr-item').animate({ height: $('.svr-item').get(0).scrollHeight}, 'swing')
       $(this).html('↑↑↑')
+      alert('expand');
     }else {
-      $('.svr-item').animate({ height: svrTwoEleHeight()}, 500)
-      $(this).html('और पढ़े ↓')
+      $('.svr-item').animate({ height: svrTwoEleHeight()}, 'swing')
+      $(this).html('और पढ़े ↓');
+      alert('collapse');
     }
   })
 
