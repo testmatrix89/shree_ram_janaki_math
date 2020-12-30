@@ -1,6 +1,6 @@
 class DevSthansController < InheritedResources::Base
   def index
-    @dev_sthans = DevSthan.all
+    @dev_sthans = DevSthan.all.order! 'created_at ASC'
   end
 
   def show

@@ -18,7 +18,7 @@ function setTimeBoxPos() {
     var contnr = $(window).width() - ($('ul.navbar-nav:not(.mr-auto)').width() + $('#navbarNavDropdown').offset().left);
     posValue =  contnr - ($('.time-box').width() / 4);
   }
-  $('.time-box').css({'left': (posValue - 10) + 'px'})
+  $('.time-box').css({'left': (posValue - 8) + 'px'})
 }
 
 
@@ -31,7 +31,7 @@ function formatAMPM() {
     //months = ['पौष','माघ','फाल्गुन','चैत्र','वैशाख','ज्येष्ठ','आषाढ़','श्रावण','भाद्रपद','आश्विन','कार्तिक','मार्गशीर्ष'],
     months = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर'],
     days = ['रविवार','सोमवार','मंगलवार','बुधवार','ब्रहस्पतिवार','शुक्रवार','शनिवार'];
-  return '<span class="day">' + days[d.getDay()] + '</span> <span class="date">' + d.getDate() + '</span> <span class="month">' + months[d.getMonth()] + '</span> <span class="year">' + d.getFullYear() +'</span> <span class="times-kaal"><span class="times">' + timeConvert(hours + ':' + minutes + ':' + seconds) + '</span> <span class="time-kaal">' + timeTense(d) + '</span></span>';
+  return '<span class="day">' + days[d.getDay()] + '</span> <span class="date"> ' + d.getDate() + '</span> <span class="month">' + months[d.getMonth()] + '</span> <span class="year">' + d.getFullYear() +' </span> <span class="times-kaal"><span class="time-kaal">' + timeTense(d) + '</span> <span class="times">' + timeConvert(hours + ':' + minutes + ':' + seconds) + '</span></span>';
 }
 
 function timeTense(date) {

@@ -10,19 +10,19 @@ AdminUser.delete_all
 AdminUser.create!(email: 'testmatrix89@gmail.com', password: 'matrix', password_confirmation: 'matrix') # if Rails.env.development?
 
 dev_sthan = [
-  { sthan_name: "श्री राम परिवार मंदिर", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम परिवार मंदिर', label: 'shree_ram_parivar' },
-  { sthan_name: "शिव परिवार", sthan_image: '', sthan_description: 'शिव परिवार', label: 'shree-shiv-parivar' },
-  { sthan_name: "श्री ठरेश्रीबाबा जी का स्थान", sthan_image: '', sthan_description: 'श्री ठरेश्रीबाबा जी का स्थान', label: 'shree-thareshee-baba' },
-  { sthan_name: "श्री हनुमान जी का स्थान", sthan_image: 'shree-hanuman-ji-home.jpg', sthan_description: 'श्री हनुमान जी का स्थान', label: 'shree-hanuman-ji' },
-  { sthan_name: "श्री कलिका माता जी का स्थान", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान', label: 'kalika-mata' },
+  { sthan_name: "श्री राम दरबार", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम दरबार, श्री राम परिवार मंदिर', label: 'shree_ram_parivar' },
+  { sthan_name: "श्री महाकालेश्वर नाथ ", sthan_image: '', sthan_description: 'श्री महाकालेश्वर नाथ ', label: 'shree-shiv-parivar' },
+  { sthan_name: "श्री ठरेश्रीबाबा जी", sthan_image: '', sthan_description: 'श्री ठरेश्रीबाबा जी का स्थान', label: 'shree-thareshee-baba' },
+  { sthan_name: "श्री हनुमान जी", sthan_image: 'shree-hanuman-ji-home.jpg', sthan_description: 'श्री हनुमान जी का स्थान', label: 'shree-hanuman-ji' },
+  { sthan_name: "श्री कलिका माता जी", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान', label: 'kalika-mata' },
   { sthan_name: "अष्टयाम बंगला", sthan_image: '', sthan_description: 'अष्टयाम बंगला', label: 'ashtyam-bangala' },
   { sthan_name: "मठ के समिप सरोवर", sthan_image: '', sthan_description: 'मठ के समिप सरोवर ', label: 'sarovar' },
   { sthan_name: "गौशाला", sthan_image: '', sthan_description: 'गौशाला', label: 'gaushala' }
 ]
 
 math_programs = [
-  { program_name: "श्री राम परिवार मंदिर", program_date: '', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'श्री राम परिवार मंदिर' },
-  { program_name: "तुलसी पूजन दिवस महोत्सव", program_date: '', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'तुलसी पूजन दिवस महोत्सव' },
+  { program_name: "श्री राम विवाहपञ्चमी", program_date: '19-12-2020 18:16', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'श्री राम परिवार मंदिर' },
+  { program_name: "तुलसी पूजन महोत्सव", program_date: '19-12-2020 18:16', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'तुलसी पूजन दिवस महोत्सव' },
 ]
 
 
@@ -47,3 +47,4 @@ Suvichar.delete_all
 suvichars.each do |suvichar|
   Suvichar.create!({"suvichar_title" => suvichar[:suvichar_title] , "suvichar_image" => '', "suvichar_text" => suvichar[:suvichar_text]})
 end
+

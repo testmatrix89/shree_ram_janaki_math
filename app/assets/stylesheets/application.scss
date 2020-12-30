@@ -23,6 +23,9 @@ body {
   padding-top: 65px;
 }
 
+.bg-danger {
+  background-color: red !important;
+}
 .navbar-toggler:not(:disabled):not(.disabled) {
   padding: 10px !important;
 }
@@ -201,6 +204,11 @@ h3.display-5 {
     font-size: 3vh;
     color: #000;
     font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid orangered; 
+    a {
+      color: red;
+    }
   }
 }
 
@@ -254,14 +262,42 @@ h3.display-5 {
 .suvichar-bg {
   background: image-url('suvichar-bg.jpg');
   background-repeat: repeat;
-  background-position: center;
-  border-radius: 70px;
+  background-position: top;
+  border-radius: 20px;
 }
 
 .flower-bg {
   background: image-url('tropical_flowers.jpg');
   background-repeat: repeat;
-  background-position: center;
+  background-position: top;
+}
+
+.suvichar-content {
+  position: relative;
+  &.btm-space {
+    padding-bottom: 20px !important;
+  }
+  .svr-item {
+    overflow: hidden;
+    height: 36px;
+    p, h2, h1, h3, h4, h5, h6, div{
+      line-height: 14px;
+    }
+    p:last-child, h2:last-child, h1:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child, div:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+  .read-more {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 5;
+    font-size: 10px;
+    width: 50px;
+    color: white;
+  }
 }
 
 @media(max-width:992px) {

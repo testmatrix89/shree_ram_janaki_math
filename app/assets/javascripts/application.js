@@ -34,6 +34,18 @@ $(document).ready(function(){
         location.href = '/'
       }
     }
+  });
+
+  suvicharReadmoreHideShow();
+
+  $('.suvichar-content .read-more').on('click', function(){
+    if( $('.svr-item').height() <= 40 ){
+      $('.svr-item').animate({ height: $('.svr-item').get(0).scrollHeight}, 'swing')
+      $(this).html('↑↑↑')
+    }else {
+      $('.svr-item').animate({ height: 36}, 500)
+      $(this).html('और पढ़े ↓')
+    }
   })
 
   setTimeout(function(){
@@ -60,4 +72,13 @@ function navTarget(target){
   body.stop().animate({scrollTop: ($('#' + target).offset().top - 40) }, 500, 'swing', function() { 
     localStorage.removeItem('navTarget');
   });
+}
+
+function suvicharReadmoreHideShow() {
+  if($('.svr-item').get(0).scrollHeight > 39){
+    $('.suvichar-content .read-more').show()
+    $('.suvichar-content').addClass('btm-space')
+  }else {
+    $('.suvichar-content .read-more').hide()
+  }
 }

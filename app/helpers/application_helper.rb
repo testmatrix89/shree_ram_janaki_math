@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include ActionView::Helpers::SanitizeHelper
   def math_dev_sthan
     [
       { sthan_name: "श्री राम परिवार मंदिर", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम परिवार मंदिर', label: 'shree_ram_parivar' },
@@ -54,12 +55,12 @@ module ApplicationHelper
     date < Time.now if date.present?
   end
 
-  def short_description(desc, desc_count)
-    if desc.length > desc_count
-      desc = "#{desc.slice(0, desc_count)}..."
-    else
-      desc
+  def short_description(desc, desc_count = 150)
+    shortable_desc = sanitize(desc, :tags=>[])
+    if shortable_desc.length > desc_count
+      shortable_desc = "#{shortable_desc.slice(0, desc_count)}..."
     end
+    shortable_desc
   end
 
   def current_date?(date)
