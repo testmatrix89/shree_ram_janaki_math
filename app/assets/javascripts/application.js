@@ -20,6 +20,15 @@
 //= require 'custom/time_display'
 
 $(document).ready(function(){
+  ringTheMandirGhanti();
+  var ghantiCount = 0;
+  $(document).on('click', function(){
+    if(ghantiCount < 5){
+      ringTheMandirGhanti();
+      ghantiCount++
+    }
+  });
+
   lightbox.init();
 
   $(document).on('click', '.navbar-dark .navbar-nav .nav-link', function(){
@@ -38,12 +47,13 @@ $(document).ready(function(){
 
   suvicharReadmoreHideShow();
 
+  $('.svr-item').animate({ height: svrTwoEleHeight()}, 500);
   $('.suvichar-content .read-more').on('click', function(){
-    if( $('.svr-item').height() <= 40 ){
+    if( $('.svr-item').height() <= svrTwoEleHeight() ){
       $('.svr-item').animate({ height: $('.svr-item').get(0).scrollHeight}, 'swing')
       $(this).html('↑↑↑')
     }else {
-      $('.svr-item').animate({ height: 36}, 500)
+      $('.svr-item').animate({ height: svrTwoEleHeight()}, 500)
       $(this).html('और पढ़े ↓')
     }
   })
@@ -64,6 +74,16 @@ $(document).ready(function(){
 
 });
 
+
+function ringTheMandirGhanti() {
+  var ghantiAudio = document.getElementById('mandirGhanti');
+  ghantiAudio.muted = true;
+  ghantiAudio.play();
+  ghantiAudio.muted = false;
+  ghantiAudio.play();
+}
+
+
 function navTarget(target){
   if(!target){
     target = localStorage.getItem('navTarget');
@@ -74,8 +94,14 @@ function navTarget(target){
   });
 }
 
+function svrTwoEleHeight() {
+  var svrEle = $('.svr-item').children().first(); //.next().outerHeight(true)
+  var svrEleHeight = svrEle.outerHeight(true) + svrEle.next().outerHeight(true);
+  return svrEleHeight;
+}
+
 function suvicharReadmoreHideShow() {
-  if($('.svr-item').get(0).scrollHeight > 39){
+  if($('.svr-item').get(0).scrollHeight > svrTwoEleHeight()){
     $('.suvichar-content .read-more').show()
     $('.suvichar-content').addClass('btm-space')
   }else {
