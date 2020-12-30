@@ -20,14 +20,22 @@
 //= require 'custom/time_display'
 
 $(document).ready(function(){
-  ringTheMandirGhanti();
+  //ringTheMandirGhanti();
+  var ghantiAudio = document.getElementById('mandirGhanti');
   var ghantiCount = 0;
   $(document).on('click', function(){
     if(ghantiCount < 5){
       ringTheMandirGhanti();
-      ghantiCount++
     }
   });
+
+
+  function ringTheMandirGhanti() {
+    if(ghantiAudio.paused){
+      ghantiCount++;
+      ghantiAudio.play();
+    }
+  }
 
   lightbox.init();
 
@@ -73,16 +81,6 @@ $(document).ready(function(){
   });
 
 });
-
-
-function ringTheMandirGhanti() {
-  var ghantiAudio = document.getElementById('mandirGhanti');
-  ghantiAudio.muted = true;
-  ghantiAudio.play();
-  ghantiAudio.muted = false;
-  ghantiAudio.play();
-}
-
 
 function navTarget(target){
   if(!target){
