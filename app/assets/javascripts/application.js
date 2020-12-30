@@ -55,7 +55,7 @@ $(document).ready(function(){
 
   suvicharReadmoreHideShow();
 
-  $('.svr-item').animate({ height: svrTwoEleHeight()}, 500);
+  $('.svr-item').animate({ height: (svrTwoEleHeight() - 2)}, 500);
 
   $('.suvichar-content .read-more').on('click', function(){
     if( $('.svr-item').height() <= svrTwoEleHeight() ){
