@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'sanskrities/show'
   root 'pages#index'
   resources :suvichars, path: 'सुविचार', only:[:index, :show]
   get 'गैलरी', to: 'albums#index', as: :albums

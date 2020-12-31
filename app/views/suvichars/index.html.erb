@@ -5,14 +5,12 @@
       <div class="row text-center">
         <% @suvichars.each do |suvichar| %>
           <div class="col-md-4">
-            <%= link_to suvichar do %>
-              <div class="card bg-warning text-white mb-4 shadow-sm">
-                <div class="card-header"><strong><%= suvichar.suvichar_title %></strong></div>
-                <div class="card-body">
-                  <div class="card-text"><%= short_description(suvichar.suvichar_text, 60).html_safe %></div>
-                </div>
-              </div>
-            <% end %>
+            <div class="card bg-warning text-white mb-4 shadow-sm">
+              <div class="card-header"><strong><%= suvichar.suvichar_title %></strong></div>
+              <%= link_to suvichar, class: "card-body bg-danger" do %>
+                <div class="card-text text-white"><%= short_description(suvichar.suvichar_text, 60).html_safe %></div>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
