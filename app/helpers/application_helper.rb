@@ -33,8 +33,8 @@ module ApplicationHelper
   def date_checks(date)
     months = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर']
     days = ['रविवार','सोमवार','मंगलवार','बुधवार','ब्रहस्पतिवार','शुक्रवार','शनिवार']
-    month = months[date.month - 1]
-    din = days[date.wday - 1]
+    month = months[date.month]
+    din = days[date.wday]
 
     if date.present?
       actual_format = date.strftime('%e %b, %Y को %l:%M %P बजे')
