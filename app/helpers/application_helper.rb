@@ -2,11 +2,11 @@ module ApplicationHelper
   include ActionView::Helpers::SanitizeHelper
   def math_dev_sthan
     [
-      { sthan_name: "श्री राम परिवार मंदिर", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम परिवार मंदिर', label: 'shree_ram_parivar' },
-      { sthan_name: "शिव परिवार", sthan_image: '', sthan_description: 'शिव परिवार', label: 'shree-shiv-parivar' },
-      { sthan_name: "श्री ठरेश्रीबाबा जी का स्थान", sthan_image: '', sthan_description: 'श्री ठरेश्रीबाबा जी का स्थान', label: 'shree-thareshee-baba' },
-      { sthan_name: "श्री हनुमान जी का स्थान", sthan_image: 'shree-hanuman-ji-home.jpg', sthan_description: 'श्री हनुमान जी का स्थान', label: 'shree-hanuman-ji' },
-      { sthan_name: "श्री कलिका माता जी का स्थान", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान', label: 'kalika-mata' },
+      { sthan_name: "श्री राम दरबार", sthan_image: 'sm-ram-parivar.jpg', sthan_description: 'श्री राम दरबार, श्री राम परिवार मंदिर', label: 'shree_ram_parivar' },
+      { sthan_name: "श्री महाकालेश्वर नाथ ", sthan_image: '', sthan_description: 'श्री महाकालेश्वर नाथ ', label: 'shree-shiv-parivar' },
+      { sthan_name: "श्री ठरेश्रीबाबा जी", sthan_image: '', sthan_description: 'श्री ठरेश्रीबाबा जी का स्थान', label: 'shree-thareshee-baba' },
+      { sthan_name: "श्री हनुमान जी", sthan_image: 'shree-hanuman-ji-home.jpg', sthan_description: 'श्री हनुमान जी का स्थान', label: 'shree-hanuman-ji' },
+      { sthan_name: "श्री कलिका माता जी", sthan_image: '', sthan_description: 'श्री कलिका माता जी का स्थान', label: 'kalika-mata' },
       { sthan_name: "अष्टयाम बंगला", sthan_image: '', sthan_description: 'अष्टयाम बंगला', label: 'ashtyam-bangala' },
       { sthan_name: "मठ के समिप सरोवर", sthan_image: '', sthan_description: 'मठ के समिप सरोवर ', label: 'sarovar' },
       { sthan_name: "गौशाला", sthan_image: '', sthan_description: 'गौशाला', label: 'gaushala' }
@@ -31,6 +31,11 @@ module ApplicationHelper
   end
 
   def date_checks(date)
+    months = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर']
+    days = ['रविवार','सोमवार','मंगलवार','बुधवार','ब्रहस्पतिवार','शुक्रवार','शनिवार']
+    month = months[date.month - 1]
+    din = days[date.wday - 1]
+
     if date.present?
       actual_format = date.strftime('%e %b, %Y को %l:%M %P बजे')
       check_time = ''
@@ -39,7 +44,7 @@ module ApplicationHelper
       elsif actual_format.include?('am') 
         check_time = 'सुबह'
       end
-      date.strftime("%e %b, %Y को #{check_time} %l:%M बजे")
+      date.strftime("#{ din } %e #{ month }, %Y को #{check_time} %l:%M बजे")
     else
       ''
     end

@@ -4,10 +4,12 @@ class PagesController < ApplicationController
   def index
   	# @products = Product.all
   	# @order_item = current_order.order_items.new
-    @math_programs = Program.all
+    math_programs = Program.all.order! 'program_date DESC'
+    @math_programs  = math_programs.first(3).reverse
+
     @dev_sthans = DevSthan.all.order! 'created_at ASC' #math_dev_sthan #
-    suvichar = Suvichar.all
-    suvichar = suvichar.order! 'created_at DESC'
+
+    suvichar = Suvichar.all.order! 'created_at DESC'
     @suvichar = suvichar.first
   end
 

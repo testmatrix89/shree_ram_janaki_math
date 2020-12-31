@@ -21,17 +21,19 @@ dev_sthan = [
 ]
 
 math_programs = [
-  { program_name: "श्री राम विवाहपञ्चमी", program_date: '19-12-2020 18:16', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'श्री राम परिवार मंदिर' },
-  { program_name: "तुलसी पूजन महोत्सव", program_date: '19-12-2020 18:16', program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'तुलसी पूजन दिवस महोत्सव' },
+  { program_name: "श्री राम विवाहपञ्चमी", program_date: '2020-12-19'.to_date, program_place: 'कल्याणपुर मठ', program_activity: 'रामलीला', program_description: 'रामलीला का आयोजन है मठ पर' },
+  { program_name: "मकर संक्रांति उत्सव", program_date: '2021-01-14'.to_date, program_place: 'कल्याणपुर मठ', program_activity: 'भजन कीर्तन', program_description: 'भजन कीर्तन का आयोजन है मठ पर' },
+  { program_name: "नए साल का उत्सव", program_date: '2021-01-01'.to_date, program_place: 'कल्याणपुर मठ', program_activity: 'भजन कीर्तन', program_description: 'भजन कीर्तन का आयोजन है मठ पर' },
+  { program_name: "तुलसी पूजन महोत्सव", program_date: '2020-12-25'.to_date, program_place: 'कल्याणपुर मठ', program_activity: 'भजन कीर्तन', program_description: 'भजन कीर्तन का आयोजन है मठ पर' },
+  { program_name: "सरस्वती पूजा", program_date: '2021-02-16'.to_date, program_place: 'कल्याणपुर स्कूल', program_activity: 'DJ Sound', program_description: 'DJ Sound का आयोजन है मठ पर' },
+  
 ]
-
 
 suvichars = [
-  { suvichar_title: "जीवन का सिख", suvichar_image: '', suvichar_text: "<p>सारी दुनिया कहती है हार मान लो लेकिन<p>दिल धीरे से कहता है एक बार और कोशिश करतूं जरूर कर सकता है!</p>" },
-  { suvichar_title: "जीवन सिख", suvichar_image: '', suvichar_text: "<p>जो गिरकर संभल जाता है,</p>वो अक्सर जिंदगी को समझ जाता है…</p>" }
+  { suvichar_title: "जीवन-दर्शन", suvichar_image: '', suvichar_text: "<p>कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।</p><p>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥</p><p>(द्वितीय अध्याय, श्लोक 47)</p><p>इस श्लोक का अर्थ है: कर्म पर ही तुम्हारा अधिकार है, लेकिन कर्म के फलों में कभी नहीं... इसलिए कर्म को फल के लिए मत करो और न ही काम करने में तुम्हारी आसक्ति हो। (यह श्रीमद्भवद्गीता के सर्वाधिक महत्वपूर्ण श्लोकों में से एक है, जो कर्मयोग दर्शन का मूल आधार है।)</p>" },
+  { suvichar_title: "जीवन का सिख", suvichar_image: '', suvichar_text: "<p>सारी दुनिया कहती है हार मान लो लेकिन</p><p>दिल धीरे से कहता है एक बार और कोशिश करतूं जरूर कर सकता है!</p>" },
+  { suvichar_title: "जीवन सिख", suvichar_image: '', suvichar_text: "<p>जो गिरकर संभल जाता है,</p><p>वो अक्सर जिंदगी को समझ जाता है…</p>" }
 ]
-
-
 
 DevSthan.delete_all
 dev_sthan.each do |sthan|
@@ -40,7 +42,7 @@ end
 
 Program.delete_all
 math_programs.each do |program|
-  Program.create!({"program_name" => program[:program_name] , "program_date" => '', "program_place" => program[:program_place], "program_activity" => program[:program_activity], "program_description" => program[:program_description]})
+  Program.create!({"program_name" => program[:program_name] , "program_date" => program[:program_date], "program_place" => program[:program_place], "program_activity" => program[:program_activity], "program_description" => program[:program_description]})
 end
 
 Suvichar.delete_all
