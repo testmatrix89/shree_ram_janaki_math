@@ -1,0 +1,22 @@
+<div class='content-area'>
+  <div class="content-area-box">
+    <div class="container p-4">
+      <h1 class="border-bottom mb-4 text-center border-warning pb-2">शिक्षा संस्कृति</h1>
+
+      <div class="row text-center">
+        <% @sanskrities.each do |sanskriti| %>
+          <div class="col-md-4">
+            <div class="card bg-warning text-white mb-4 shadow-sm">
+              <div class="card-header"><strong><%= sanskriti.title %></strong></div>
+              <div class="card-body">
+                <%= link_to sanskriti do %>
+                  <div class="card-text"><%= short_description(sanskriti.description, 60).html_safe %></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

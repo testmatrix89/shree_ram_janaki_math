@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_133123) do
+ActiveRecord::Schema.define(version: 2020_12_31_141130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,18 @@ ActiveRecord::Schema.define(version: 2020_12_28_133123) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "colour_options"
+    t.decimal "discount"
+    t.decimal "price"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.json "avatars"
+  end
+
   create_table "programs", force: :cascade do |t|
     t.string "program_name"
     t.datetime "program_date"
@@ -86,6 +98,17 @@ ActiveRecord::Schema.define(version: 2020_12_28_133123) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.index ["slug"], name: "index_programs_on_slug", unique: true
+  end
+
+  create_table "sanskrities", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.json "image"
+    t.string "topic"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug"], name: "index_sanskrities_on_slug", unique: true
   end
 
   create_table "subscribers", force: :cascade do |t|

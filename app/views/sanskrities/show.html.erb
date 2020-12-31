@@ -1,0 +1,15 @@
+<div class='content-area'>
+  <div class="content-area-box">
+    <div class="container py-5">
+      <h1 class="border-bottom mb-4 text-center border-warning pb-2"><%= @sanskriti.title %></h1>
+      <div class="py-4">
+        <%= sanitize(@sanskriti.description).html_safe %>
+        
+        <% if @sanskriti.image.present? %>
+          <%= image_tag(@sanskriti.image.url) %>
+        <% end %>
+      </div>
+      <%= link_to 'Back', suvichars_path %>
+    </div>
+  </div>
+</div>
