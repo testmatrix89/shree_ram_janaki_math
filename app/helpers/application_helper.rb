@@ -52,7 +52,8 @@ module ApplicationHelper
 
   def program_date_start(date)
     return true unless date.present?
-    date >= Time.now if date.present?
+    # date >= Time.now if date.present?
+    date.strftime('%F')  >= Time.now.strftime('%F') if date.present?
   end
 
   def program_date_end(date)
