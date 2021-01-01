@@ -3,38 +3,34 @@
     <div class="container py-5">
       <h1 class="border-bottom mb-4 py-2 text-center border-warning pb-2">सभी उत्सव</h1>
       <div class="row text-center">
-        <% @programs.each do |program| %>
-          <% if program_date_start(program.program_date) %> 
-            <div class="col-md-4">
-              <div class="card bg-danger text-white mb-4 shadow-sm">
-                <div class="card-header"><strong><%= program.program_name %></strong></div>
-                <%= link_to program, class: "card-body text-white" do %>
-                  <div class="card-title"><%= date_checks(program.program_date) %></div>
-                  <div class="card-text"><%= program.program_place %></div>
-                  <!-- <p><%= program.program_activity %></p>
-                  <p><%= program.program_description %></p> -->
-                <% end %>
-              </div>
+        <% @upcoming_programs.each do |program| %>
+          <div class="col-md-4">
+            <div class="card bg-danger text-white mb-4 shadow-sm">
+              <div class="card-header"><strong><%= program.program_name %></strong></div>
+              <%= link_to program, class: "card-body text-white" do %>
+                <div class="card-title"><%= date_checks(program.program_date) %></div>
+                <div class="card-text"><%= program.program_place %></div>
+                <!-- <p><%= program.program_activity %></p>
+                <p><%= program.program_description %></p> -->
+              <% end %>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
       <h3 class="border-bottom mb-4 mt-4 border-top py-2 text-center border-warning">श्रद्धापूर्वक संपन्न उत्सव</h3>
       <div class="row text-center">
-        <% @programs.each do |program| %>
-          <% if program_date_end(program.program_date) %>
-            <div class="col-md-4">
-              <div class="card bg-danger text-white mb-4 shadow-sm">
-                <div class="card-header"><strong><%= program.program_name %></strong></div>
-                <%= link_to program, class: "card-body text-white" do %>
-                  <div class="card-title"><%= date_checks(program.program_date) %></div>
-                  <div class="card-text"><%= program.program_place %></div>
-                  <!-- <p><%= program.program_activity %></p>
-                  <p><%= program.program_description %></p> -->
-                 <% end %>
-              </div>
+        <% @expired_programs.each do |program| %>
+          <div class="col-md-4">
+            <div class="card bg-danger text-white mb-4 shadow-sm">
+              <div class="card-header"><strong><%= program.program_name %></strong></div>
+              <%= link_to program, class: "card-body text-white" do %>
+                <div class="card-title"><%= date_checks(program.program_date) %></div>
+                <div class="card-text"><%= program.program_place %></div>
+                <!-- <p><%= program.program_activity %></p>
+                <p><%= program.program_description %></p> -->
+               <% end %>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
     </div>

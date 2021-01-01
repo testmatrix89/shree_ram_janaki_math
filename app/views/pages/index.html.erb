@@ -70,7 +70,7 @@
     <div class="programs">
       <h2>अगला महोत्सव उत्सव:</h2>
       <% @math_programs.each do |program| %>
-        <% if program_date_start(program.program_date) %>
+        <% if program_date_upcoming(program.program_date) %>
           <p>
             <%= link_to program_path(program) do %>
               <%= program.program_name %>:- <span><%= date_checks(program.program_date) %></span>

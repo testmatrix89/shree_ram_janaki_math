@@ -50,15 +50,16 @@ module ApplicationHelper
     end
   end
 
-  def program_date_start(date)
+  def program_date_upcoming(date)
     return true unless date.present?
     # date >= Time.now if date.present?
-    date.strftime('%F')  >= Time.now.strftime('%F') if date.present?
+    date.strftime('%F') >= Time.now.strftime('%F') if date.present?
   end
 
-  def program_date_end(date)
+  def program_date_expired(date)
     return true unless date.present?
-    date < Time.now if date.present?
+    # date < Time.now if date.present?
+    date.strftime('%F') < Time.now.strftime('%F') if date.present?
   end
 
   def short_description(desc, desc_count = 150)
