@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
     @dev_sthans = DevSthan.all.order! 'created_at ASC' #math_dev_sthan #
 
-    suvichar = Suvichar.all.order! 'created_at DESC'
+    suvichar = Suvichar.all.order! 'updated_at DESC'
     @suvichar = suvichar.first
   end
 
