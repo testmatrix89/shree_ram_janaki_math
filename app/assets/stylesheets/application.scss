@@ -299,6 +299,40 @@ h3.display-5 {
   }
 }
 
+.decoration:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: image-url('decoration-top.png');
+  background-size: 100%;
+  background-position: 0 -10px;
+  background-repeat: no-repeat;
+  z-index: 1
+}
+
+.decoration:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  right: 0;
+  background: image-url('phul.png');
+  background-size: 70%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  z-index: 3;
+  height: 100px;
+}
+
+.decoration.sarovar:before, .decoration.sarovar:after, .decoration.gaushala:before, .decoration.gaushala:after {
+  content: none !important;
+}
+
 @media(max-width:992px) {
   .navbar-dark {
     .navbar-nav {
