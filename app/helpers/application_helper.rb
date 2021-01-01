@@ -33,7 +33,7 @@ module ApplicationHelper
   def date_checks(date)
     months = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर']
     days = ['रविवार','सोमवार','मंगलवार','बुधवार','ब्रहस्पतिवार','शुक्रवार','शनिवार']
-    month = months[date.month]
+    month = months[date.month - 1]
     din = days[date.wday]
 
     if date.present?
