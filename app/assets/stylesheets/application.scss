@@ -233,20 +233,36 @@ h3.display-5 {
 
 .time-box {
   position: absolute;
-  top: 10px;
+  top: 0;
   text-align: center;
   line-height: 15px;
   left: 222px;
   font-size: 11px;
+  line-height: 12px;
   color: #fff;
+  width: 76px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  div {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
   .day {
     display: block;
   }
-  .month, .day {
+  .month, .day, .tithi {
   font-size: 9px;
   }
-  .times-kaal {
+  .times-kaal, .tithi {
     display: block;
+    color: yellow;
+  }
+  .tithi {
+    word-break: break-all;
+    width: 100%;
     color: yellow;
   }
 }

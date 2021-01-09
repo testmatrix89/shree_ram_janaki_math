@@ -19,34 +19,39 @@
 //= require 'custom/time_display'
 
 $(document).ready(function(){
-  //ringTheMandirGhanti();
   var ghantiAudio = document.getElementById('mandirGhanti');
+  ghantiAudio.pause()
   var ghantiCount = 0;
+
   $(document).on('click', function(){
-    if(ghantiCount < 5){
+    if(ghantiCount < 3){
       ringTheMandirGhanti();
     }
+    var ringingItem = parseInt(localStorage.getItem('ringTheBell')) || 0;
+    ringingItem += 1;
+    localStorage.setItem('ringTheBell', ringingItem);
   });
 
-  var interacted = false;
+  // var interacted = false;
 
-  function fun(){
-    interacted = true;
-    $(window).unbind("scroll");
-    play();
-  }
+  // function fun(){
+  //   interacted = true;
+  //   $(window).unbind("scroll");
+  //   play();
+  // }
 
-  $(window).bind("scroll", fun);
+  // $(window).bind("scroll", fun);
 
-  function play(){
-   if(interacted){
-      //play audio or video
-    ghantiAudio.play();
-   }
-  }
+  // function play(){
+  //  if(interacted){
+  //     //play audio or video
+  //   ghantiAudio.play();
+  //  }
+  // }
 
   function ringTheMandirGhanti() {
-    if(ghantiAudio.paused){
+    var counting = parseInt(localStorage.getItem('ringTheBell')) || 0;
+    if(ghantiAudio.paused && !(counting > 3)) {
       ghantiCount++;
       ghantiAudio.play();
     }
@@ -115,7 +120,7 @@ function svrTwoEleHeight() {
 }
 
 function suvicharReadmoreHideShow() {
-  if($('.svr-item')[0].scrollHeight > svrTwoEleHeight()){
+  if($('.svr-item').length > 0 && $('.svr-item')[0].scrollHeight > svrTwoEleHeight()){
     $('.suvichar-content .read-more').show()
     $('.suvichar-content').addClass('btm-space')
   }else {
