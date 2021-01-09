@@ -27,9 +27,6 @@ $(document).ready(function(){
     if(ghantiCount < 3){
       ringTheMandirGhanti();
     }
-    var ringingItem = parseInt(localStorage.getItem('ringTheBell')) || 0;
-    ringingItem += 1;
-    localStorage.setItem('ringTheBell', ringingItem);
   });
 
   // var interacted = false;
@@ -54,6 +51,9 @@ $(document).ready(function(){
     if(ghantiAudio.paused && !(counting > 3)) {
       ghantiCount++;
       ghantiAudio.play();
+      var ringingTime = parseInt(localStorage.getItem('ringTheBell')) || 0;
+      ringingTime += 1;
+      localStorage.setItem('ringTheBell', ringingTime);
     }
   }
 
