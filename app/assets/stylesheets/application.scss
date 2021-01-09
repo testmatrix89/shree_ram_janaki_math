@@ -240,7 +240,6 @@ h3.display-5 {
   font-size: 11px;
   line-height: 12px;
   color: #fff;
-  width: 76px;
   height: 66px;
   display: flex;
   align-items: center;
@@ -264,6 +263,7 @@ h3.display-5 {
     word-break: break-all;
     width: 100%;
     color: yellow;
+    max-width: 90px;
   }
 }
 
