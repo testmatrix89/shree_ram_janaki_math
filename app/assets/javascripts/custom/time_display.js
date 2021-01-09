@@ -63,7 +63,7 @@ function timeConvert (time) {
 function todayTithiPanchang(month, date){
   var dates = panchang[month]
   var todayTithi = dates.find((d) => d.date.includes(date))
-  return todayTithi.name;
+  return todayTithi ? todayTithi.name : '';
 }
 
 // var app = {
