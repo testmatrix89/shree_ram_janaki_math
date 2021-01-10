@@ -18,7 +18,11 @@ ActiveAdmin.register Sanskrity do
   index do
     selectable_column
     column 'Title', :title
-    column 'Description', 'See Full description edit this page or visit website'
+    column 'Description' do |sanskrity|
+      div do
+        short_description(sanskrity.description, 75)
+      end
+    end
     # column :sthan_image do |avatar|
     #   span do
     #     avatar.avatars.each do |img|
@@ -31,6 +35,19 @@ ActiveAdmin.register Sanskrity do
     column 'Created Date', :created_at
     column 'Updated Date', :updated_at
     actions
+  end
+
+  show do
+    attributes_table do
+      row :title
+      row 'Description' do |sanskrity|
+        div do
+          short_description(sanskrity.description, 150)
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
   end
 
   form do |f|

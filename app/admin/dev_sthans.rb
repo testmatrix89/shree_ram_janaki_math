@@ -16,7 +16,11 @@ ActiveAdmin.register DevSthan do
   index do
     selectable_column
     column 'Sthan Name', :sthan_name
-    column 'Sthan Description', 'See Full description edit this page or visit website'
+    column 'Description' do |devsthan|
+      div do
+        short_description(devsthan.sthan_description, 75)
+      end
+    end
     # column :sthan_image do |avatar|
     #   span do
     #     avatar.avatars.each do |img|
@@ -29,6 +33,19 @@ ActiveAdmin.register DevSthan do
     column 'Created Date', :created_at
     column 'Updated Date', :updated_at
     actions
+  end
+
+  show do
+    attributes_table do
+      row :sthan_name
+      row 'Description' do |devsthan|
+        div do
+          short_description(devsthan.sthan_description, 150)
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
   end
 
   form html: { multipart: true }  do |f|

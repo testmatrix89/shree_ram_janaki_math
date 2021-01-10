@@ -9,7 +9,11 @@ ActiveAdmin.register Suvichar do
   index do
     selectable_column
     column 'Suvichar Title', :suvichar_title
-    column 'Suvichar Text', 'See Full description edit this page or visit website'
+    column 'Suvichar Text' do |suvichars|
+      div do
+        short_description(suvichars.suvichar_text, 75)
+      end
+    end
     # column :sthan_image do |avatar|
     #   span do
     #     avatar.avatars.each do |img|
@@ -22,6 +26,19 @@ ActiveAdmin.register Suvichar do
     column 'Created Date', :created_at
     column 'Updated Date', :updated_at
     actions
+  end
+
+  show do
+    attributes_table do
+      row :suvichar_title
+      row 'Suvichar Text' do |suvichars|
+        div do
+          short_description(suvichars.suvichar_text, 150)
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
   end
 
   form html: { multipart: true }  do |f|

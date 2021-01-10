@@ -7,7 +7,7 @@ $(document).ready(function(){
 
   setTimeout(function(){
     setTimeBoxPos();
-  }, 10);
+  }, 1);
 
   $(window).on('scroll resize', setTimeBoxPos);
 
@@ -21,7 +21,7 @@ function setTimeBoxPos() {
     var contnr = $(window).width() - ($('ul.navbar-nav:not(.mr-auto)').width() + $('#navbarNavDropdown').offset().left);
     posValue =  contnr - ($('.time-box').width() / 4);
   }
-  $('.time-box').css({'left': (posValue - 8) + 'px'})
+  $('.time-box').css({'left': (posValue - 8) + 'px', 'display': 'flex'})
 }
 
 function formatAMPM() {

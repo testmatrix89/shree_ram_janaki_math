@@ -8,6 +8,6 @@ class ContactMailer < ApplicationMailer
 
   def contact_self(contact_params)
     @sender_self = contact_params
-    mail(to: 'testmatrix89@gmail.com', subject: @sender_self['name'])
+    mail(to: 'thareshreebabamath@gmail.com', subject: @sender_self['name'])
   end
 end
