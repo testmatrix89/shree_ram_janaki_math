@@ -267,6 +267,17 @@ h3.display-5 {
   }
 }
 
+@media(min-width: 400px) {
+  .time-box {
+    .day {
+      display: inline;
+    }
+    .tithi {
+      max-width: 150px;
+    }
+  }
+}
+
 .suvichar-box {
   p {
     margin-bottom: 5px;
@@ -417,11 +428,16 @@ h3.display-5 {
   .starter-template {
     padding: 1rem 1.5rem;
   }
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
 }
-@media(max-width:370px) {
-  .month, .day, .date, .year {
+@media(max-width: 360px) {
+  .month, .date, .year, .tithi {
     display: none !important;
   }
+
   .time-kaal {
     display: block !important;
   }

@@ -1,12 +1,15 @@
 $(document).ready(function(){
+   $('.time-box').html(formatAMPM());
+
   setInterval(function(){
     $('.time-box').html(formatAMPM());
   }, 1000)
 
   setTimeout(function(){
     setTimeBoxPos();
-    $(window).on('resize', setTimeBoxPos);
-  }, 1010)
+  }, 10);
+
+  $(window).on('scroll resize', setTimeBoxPos);
 
 })
 
@@ -29,7 +32,7 @@ function formatAMPM() {
     dates = d.getDate().toString().length == 1 ? '0'+d.getDate() : d.getDate(),
     months = ['जनवरी','फरवरी','मार्च','अप्रैल','मई','जून','जुलाई','अगस्त','सितम्बर','अक्टूबर','नवम्बर','दिसम्बर'],
     days = ['रविवार','सोमवार','मंगलवार','बुधवार','ब्रहस्पतिवार','शुक्रवार','शनिवार'];
-  return '<div><span class="day">' + days[d.getDay()] + '</span> <span class="date"> ' + d.getDate() + '</span> <span class="month">' + months[d.getMonth()] + '</span> <span class="year">' + d.getFullYear() +' </span> <span class="times-kaal"><span class="time-kaal">' + timeTense(d) + '</span> <span class="times">' + timeConvert(hours + ':' + minutes + ':' + seconds) + '</span></span><span class="tithi">' + todayTithiPanchang(d.getMonth(), dates) + '</span></div>';
+  return '<div><span class="day">' + days[d.getDay()] + '</span> <span class="date"> ' + d.getDate() + '</span> <span class="month">' + months[d.getMonth()] + '</span> <span class="year">' + d.getFullYear() +' </span> <span class="times-kaal"><span class="time-kaal">' + timeTense(d) + '</span> <span class="times">' + timeConvert(hours + ':' + minutes + ':' + seconds) + '</span><span class="tithi"> ' + todayTithiPanchang(d.getMonth(), dates) + '</span></span></div>';
 }
 
 function timeTense(date) {
