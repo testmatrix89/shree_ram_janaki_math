@@ -1,4 +1,5 @@
 ActiveAdmin.register Subscriber do
+	config.filters = false
 
 	controller do
   	actions :all, :except => [:edit, :new]

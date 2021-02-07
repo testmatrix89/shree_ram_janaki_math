@@ -1,4 +1,5 @@
 ActiveAdmin.register Contact do
+  config.filters = false
   controller do
     actions :all, :except => [:edit, :new]
   end
