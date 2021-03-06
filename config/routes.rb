@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'income-and-expense-details', to: 'income_and_expense_details#index', as: :income_and_expense_details
+  get 'income_and_expense_details/show'
   root 'pages#index'
   resources :suvichars, path: 'सुविचार', only:[:index, :show]
   get 'गैलरी', to: 'albums#index', as: :albums

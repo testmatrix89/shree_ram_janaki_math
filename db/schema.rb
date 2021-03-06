@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_141130) do
+ActiveRecord::Schema.define(version: 2021_03_06_151339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 2020_12_31_141130) do
     t.index ["slug"], name: "index_dev_sthans_on_slug", unique: true
   end
 
+  create_table "expenses_amounts", force: :cascade do |t|
+    t.string "expense_title"
+    t.datetime "Expense_date"
+    t.decimal "expense_amount"
+    t.string "name_of_expense_done"
+    t.text "expense_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -74,6 +84,25 @@ ActiveRecord::Schema.define(version: 2020_12_31_141130) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "income_amounts", force: :cascade do |t|
+    t.decimal "total_amount_received"
+    t.datetime "date_to_taken_amount"
+    t.string "name_of_amount_receiver"
+    t.string "name_of_amount_taken_from"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "people_which_have_moneys", force: :cascade do |t|
+    t.string "persone_name"
+    t.datetime "taken_date"
+    t.decimal "taken_amount"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "products", force: :cascade do |t|

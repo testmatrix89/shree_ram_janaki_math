@@ -1,0 +1,2 @@
+class PeopleWhichHaveMoney < ApplicationRecord
+end
