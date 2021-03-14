@@ -4,10 +4,10 @@
       <h1 class="border-bottom mb-4 py-2 text-center border-warning pb-2">आय और खर्च का विवरण</h1>
       <div class="block">
         <div class="alert alert-success" role="alert">
-          <h4 class="alert-heading">कुल जामा राशी = 50000</h4>
+          <h4 class="alert-heading">कुल जामा राशी = <%= @total_income_amount %></h4>
           <div class="row">
-            <div class="col-md-6">लोगों के पास है = 20000</div>
-            <div class="col-md-6">कुल खर्च = 20000</div>
+            <div class="col-md-6">लोगों के पास है = <%= @total_amount_people_have %></div>
+            <div class="col-md-6">कुल खर्च = <%= @total_expense_amount %></div>
           </div>
           <hr>
           <p class="mb-0"></p>
@@ -37,7 +37,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% @total_income_details.each do |income| %>
+                <% @income_details.each do |income| %>
                   <tr>
                     <th><%= income.total_amount_received %></th>
                     <td><%= income.date_to_taken_amount.strftime('%e %b, %Y') %></td>
@@ -68,13 +68,13 @@
                 </tr>
               </thead>
               <tbody>
-                <% @total_Expense_details.each do |income| %>
+                <% @Expense_details.each do |expense| %>
                   <tr>
-                    <th><%= income.expense_title %></th>
-                    <td><%= income.Expense_date.strftime('%e %b, %Y') %></td>
-                    <td><%= income.expense_amount %></td>
-                    <td><%= income.name_of_expense_done %></td>
-                    <td><%= income.expense_description.html_safe %></td>
+                    <th><%= expense.expense_title %></th>
+                    <td><%= expense.Expense_date.strftime('%e %b, %Y') %></td>
+                    <td><%= expense.expense_amount %></td>
+                    <td><%= expense.name_of_expense_done %></td>
+                    <td><%= expense.expense_description.html_safe %></td>
                   </tr>
                 <% end %>
                 <!-- <tr>
@@ -98,12 +98,13 @@
                 </tr>
               </thead>
               <tbody>
-                <% @total_money_people_have_details.each do |income| %>
+                <% @money_people_have_details.each do |people_have| %>
+
                   <tr>
-                    <th><%= income.persone_name %></th>
-                    <td><%= income.taken_date.strftime('%e %b, %Y') %></td>
-                    <td><%= income.taken_amount %></td>
-                    <td><%= income.description.html_safe %></td>
+                    <th><%= people_have.persone_name %></th>
+                    <td><%= people_have.taken_date.strftime('%e %b, %Y') %></td>
+                    <td><%= people_have.taken_amount %></td>
+                    <td><%= people_have.description.html_safe %></td>
                   </tr>
                 <% end %>
                 <!-- <tr>
