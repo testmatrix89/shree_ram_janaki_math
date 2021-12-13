@@ -422,6 +422,30 @@ h3.display-5 {
   .lb-nav a.lb-prev, .lb-nav a.lb-next {
     opacity: 1 !important;
   }
+
+  .income-exp-index{
+    h1 {
+      font-size: 20px;
+    }
+    h4.alert-heading{
+      font-size: 16px;
+    }
+    h4.alert-heading + .row div {
+      font-size: 12px;
+    }
+    .nav-link {
+      font-size: 10px;
+      padding: 0.5rem 0.5rem;
+    }
+    .table-bordered thead th, .table-bordered thead td, .table-bordered tbody th, .table-bordered tbody td {
+      font-size: 8px;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+
+
+
+
 }
 
 
