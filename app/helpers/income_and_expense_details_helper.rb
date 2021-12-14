@@ -1,0 +1,2 @@
+module IncomeAndExpenseDetailsHelper
+end

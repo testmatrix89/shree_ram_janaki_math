@@ -1,0 +1,124 @@
+<div class='content-area-e income-exp-index'>
+  <div class="content-area-box">
+    <div class="container py-4">
+      <h1 class="border-bottom mb-4 py-2 text-center border-warning pb-2">आय और खर्च का विवरण</h1>
+      <div class="block">
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">कुल जामा राशी = <%= @total_income_amount %></h4>
+          <div class="row">
+            <div class="col-md-6">लोगों के पास है = <%= @total_amount_people_have %></div>
+            <div class="col-md-6">कुल खर्च = <%= @total_expense_amount %></div>
+          </div>
+          <hr>
+          <p class="mb-0"></p>
+        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">कुल आय का विवरण</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">कुल खर्च का विवरण</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">जिन लोगों के पास पैसा है</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!-- Tab Block Start-->
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">कुल राशि प्राप्त हुई</th>
+                  <th scope="col">राशि लेने की तिथि</th>
+                  <th scope="col">राशि प्राप्तकर्ता का नाम</th>
+                  <th scope="col">राशि देने वाले का नाम</th>
+                  <th scope="col">विवरण</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @income_details.each do |income| %>
+                  <tr>
+                    <th><%= income.total_amount_received %></th>
+                    <td><%= income.date_to_taken_amount.strftime('%e %b, %Y') %></td>
+                    <td><%= income.name_of_amount_receiver %></td>
+                    <td><%= income.name_of_amount_taken_from %></td>
+                    <td><%= income.description.html_safe %></td>
+                  </tr>
+                <% end %>
+                <!-- <tr>
+                  <th scope="row"></th>
+                  <td colspan="2">Total Amount</td>
+                  <td>00000</td>
+                </tr> -->
+              </tbody>
+            </table>
+            <!-- Tab Block end-->
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <!-- Tab Block Start-->
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">खर्च का नाम</th>
+                  <th scope="col">खार्च होन का तरिख</th>
+                  <th scope="col">खर्चे किये गए पैसे</th>
+                  <th scope="col">जिसके द्वार खर्चा</th>
+                  <th scope="col">विवरण</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @Expense_details.each do |expense| %>
+                  <tr>
+                    <th><%= expense.expense_title %></th>
+                    <td><%= expense.Expense_date.strftime('%e %b, %Y') %></td>
+                    <td><%= expense.expense_amount %></td>
+                    <td><%= expense.name_of_expense_done %></td>
+                    <td><%= expense.expense_description.html_safe %></td>
+                  </tr>
+                <% end %>
+                <!-- <tr>
+                  <th scope="row"></th>
+                  <td colspan="2">Total Amount</td>
+                  <td>00000</td>
+                </tr> -->
+              </tbody>
+            </table>
+            <!-- Tab Block end-->
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <!-- Tab Block Start-->
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">नाम</th>
+                  <th scope="col">तारीख</th>
+                  <th scope="col">कुल पैसा लिया</th>
+                  <th scope="col">विवरण</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @money_people_have_details.each do |people_have| %>
+
+                  <tr>
+                    <th><%= people_have.persone_name %></th>
+                    <td><%= people_have.taken_date.strftime('%e %b, %Y') %></td>
+                    <td><%= people_have.taken_amount %></td>
+                    <td><%= people_have.description.html_safe %></td>
+                  </tr>
+                <% end %>
+                <!-- <tr>
+                  <th scope="row"></th>
+                  <td colspan="2">Total Amount</td>
+                  <td>00000</td>
+                </tr> -->
+              </tbody>
+            </table>
+            <!-- Tab Block end-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
