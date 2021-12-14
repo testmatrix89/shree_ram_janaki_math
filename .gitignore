@@ -32,3 +32,6 @@ Gemfile.lock
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore unnecesary files
+.DS_Store
